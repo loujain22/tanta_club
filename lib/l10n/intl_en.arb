@@ -1,5 +1,6 @@
 {
 
-   "tanta": "Tanta club"
+   "login": "Login",
+   "loginSubTitle" : "Please Sign in to continue"
 
 }

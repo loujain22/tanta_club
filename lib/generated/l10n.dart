@@ -50,11 +50,21 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
-  /// `Tanta club`
-  String get tanta {
+  /// `Login`
+  String get login {
     return Intl.message(
-      'Tanta club',
-      name: 'tanta',
+      'Login',
+      name: 'login',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please Sign in to continue`
+  String get loginSubTitle {
+    return Intl.message(
+      'Please Sign in to continue',
+      name: 'loginSubTitle',
       desc: '',
       args: [],
     );
