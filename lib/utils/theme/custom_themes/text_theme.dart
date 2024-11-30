@@ -4,14 +4,14 @@ class TTextTheme {
   TTextTheme._();
 
 // -- Light Theme
-  static TextTheme arabicTextTheme = TextTheme(
+  static TextTheme textTheme = TextTheme(
     headlineLarge: const TextStyle().copyWith(
-        fontSize: 30.0,
+        fontSize: 28.0,
         fontWeight: FontWeight.bold,
         fontFamily: 'Almarai',
         color: Colors.black),
     headlineMedium: const TextStyle().copyWith(
-        fontSize: 24.0,
+        fontSize: 22.0,
         fontWeight: FontWeight.w600,
         fontFamily: 'Almarai',
         color: Colors.black),
@@ -24,7 +24,7 @@ class TTextTheme {
     ////////////////////////////////////////////////////////////////////
 
     titleLarge: const TextStyle().copyWith(
-        fontSize: 16.0,
+        fontSize: 18.0,
         fontWeight: FontWeight.w600,
         fontFamily: 'Almarai',
         color: Colors.black),

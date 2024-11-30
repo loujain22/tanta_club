@@ -1,6 +1,9 @@
 {
 
    "login": "Login",
-   "loginSubTitle" : "Please Sign in to continue"
+   "loginSubTitle" : "Please Sign in to continue",
+   "Username" : "Username",
+   "Password" : "Password",
+   "Signin" : "Sign in"
 
 }
