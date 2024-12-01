@@ -25,8 +25,19 @@ class MessageLookup extends MessageLookupByLibrary {
         "Password": MessageLookupByLibrary.simpleMessage("Password"),
         "Signin": MessageLookupByLibrary.simpleMessage("Sign in"),
         "Username": MessageLookupByLibrary.simpleMessage("Username"),
+        "confirmNewPassword":
+            MessageLookupByLibrary.simpleMessage("Confirm New Password"),
+        "createNewPassword":
+            MessageLookupByLibrary.simpleMessage("Create New Password"),
+        "fromPreviouslyUsedPassword": MessageLookupByLibrary.simpleMessage(
+            "From Previously Used Password."),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
         "loginSubTitle":
-            MessageLookupByLibrary.simpleMessage("Please Sign in to continue")
+            MessageLookupByLibrary.simpleMessage("Please Sign in to continue"),
+        "newPassword": MessageLookupByLibrary.simpleMessage("New Password"),
+        "oldPassword": MessageLookupByLibrary.simpleMessage("Old Password"),
+        "save": MessageLookupByLibrary.simpleMessage("Save"),
+        "yourNewPasswordMustBeDifferent": MessageLookupByLibrary.simpleMessage(
+            "Your New Password Must Be Different")
       };
 }

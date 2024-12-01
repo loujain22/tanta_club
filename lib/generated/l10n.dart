@@ -99,6 +99,76 @@ class S {
       args: [],
     );
   }
+
+  /// `Old Password`
+  String get oldPassword {
+    return Intl.message(
+      'Old Password',
+      name: 'oldPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `New Password`
+  String get newPassword {
+    return Intl.message(
+      'New Password',
+      name: 'newPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm New Password`
+  String get confirmNewPassword {
+    return Intl.message(
+      'Confirm New Password',
+      name: 'confirmNewPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Save`
+  String get save {
+    return Intl.message(
+      'Save',
+      name: 'save',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create New Password`
+  String get createNewPassword {
+    return Intl.message(
+      'Create New Password',
+      name: 'createNewPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your New Password Must Be Different`
+  String get yourNewPasswordMustBeDifferent {
+    return Intl.message(
+      'Your New Password Must Be Different',
+      name: 'yourNewPasswordMustBeDifferent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `From Previously Used Password.`
+  String get fromPreviouslyUsedPassword {
+    return Intl.message(
+      'From Previously Used Password.',
+      name: 'fromPreviouslyUsedPassword',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

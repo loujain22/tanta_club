@@ -3,8 +3,6 @@ import 'package:tanta_club/style/colors.dart';
 
 class TTextFieldTheme {
   TTextFieldTheme._();
-
-//-- Light Theme --
   static InputDecorationTheme inputDecorationTheme = InputDecorationTheme(
     errorMaxLines: 3,
     prefixIconColor: Colors.grey,

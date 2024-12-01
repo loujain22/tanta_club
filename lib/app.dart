@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:tanta_club/generated/l10n.dart';
+import 'package:tanta_club/presentation/change_password.dart';
 import 'package:tanta_club/presentation/login.dart';
 import 'package:tanta_club/utils/theme/custom_themes/theme.dart';
 
@@ -12,7 +13,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      locale: const Locale('ar'),
+      locale: const Locale('en'),
       localizationsDelegates: const [
         S.delegate,
         GlobalMaterialLocalizations.delegate,
@@ -22,7 +23,7 @@ class App extends StatelessWidget {
       supportedLocales: S.delegate.supportedLocales,
       title: 'Tanta',
       theme: TAppTheme.arabicAppTheme,
-      home: const LoginScreen(),
+      home: const ChangePasswordScreen(),
     );
   }
 }

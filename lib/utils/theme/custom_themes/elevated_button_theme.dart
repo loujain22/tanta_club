@@ -4,7 +4,6 @@ import 'package:tanta_club/style/colors.dart';
 class TElevatedButtonTheme {
   TElevatedButtonTheme._();
 
-  //-- Light Theme
   static final elevatedButtonTheme = ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
           elevation: 0,

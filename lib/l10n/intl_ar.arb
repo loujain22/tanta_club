@@ -3,5 +3,12 @@
    "loginSubTitle" : "الرجاء تسجيل الدخول للمتابعة",
    "Username" : "إسم المستخدم",
    "Password" : "كلمة المرور",
-   "Signin" : "تسجيل الدخول"
+   "Signin" : "تسجيل الدخول",
+   "oldPassword" : "كلمة المرور السابقة",
+   "newPassword" : "كلمة المرور الجديدة",
+   "confirmNewPassword" : "تأكيد كلمة المرور",
+   "save" : "حفظ",
+   "createNewPassword" : "إنشاء كلمة مرور جديدة",
+   "yourNewPasswordMustBeDifferent" : "يجب أن تكون كلمة المرور الجديدة مختلفة",
+   "fromPreviouslyUsedPassword" : "عن كلمة المرور المستخدمة سابقا."
 }
