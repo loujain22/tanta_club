@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 import 'package:tanta_club/generated/l10n.dart';
+import 'package:tanta_club/navigation_menu.dart';
 import 'package:tanta_club/utils/helpers/helper_functions.dart';
 import 'package:tanta_club/utils/theme/custom_themes/text_theme.dart';
 import 'package:intl/intl.dart';
@@ -72,7 +74,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () => Get.to(() => const NavigationMenu()),
                       child: Text(S.of(context).Signin,
                           style: TTextTheme.textTheme.titleLarge)),
                 )

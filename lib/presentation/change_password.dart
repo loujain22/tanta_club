@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 import 'package:tanta_club/generated/l10n.dart';
-import 'package:tanta_club/style/colors.dart';
 import 'package:tanta_club/utils/helpers/helper_functions.dart';
 import 'package:tanta_club/utils/theme/custom_themes/text_theme.dart';
 
