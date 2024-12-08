@@ -10,5 +10,10 @@
    "save" : "حفظ",
    "createNewPassword" : "إنشاء كلمة مرور جديدة",
    "yourNewPasswordMustBeDifferent" : "يجب أن تكون كلمة المرور الجديدة مختلفة",
-   "fromPreviouslyUsedPassword" : "عن كلمة المرور المستخدمة سابقا."
+   "fromPreviouslyUsedPassword" : "عن كلمة المرور المستخدمة سابقا.",
+   "home" : "الصفحة الرئيسية",
+   "events" : "فعاليات",
+   "news" : "الأخبار",
+   "payment" : "الدفع",
+   "you" : "أنت"
 }

@@ -11,6 +11,12 @@
    "save" : "Save",
    "createNewPassword" : "Create New Password",
    "yourNewPasswordMustBeDifferent" : "Your New Password Must Be Different",
-   "fromPreviouslyUsedPassword" : "From Previously Used Password."
+   "fromPreviouslyUsedPassword" : "From Previously Used Password.",
+   "home" : "Home",
+   "events" : "Events",
+   "news" : "News",
+   "payment" : "Payment",
+   "you" : "You"
+
 
 }

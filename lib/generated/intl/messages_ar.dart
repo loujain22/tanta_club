@@ -29,16 +29,21 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("تأكيد كلمة المرور"),
         "createNewPassword":
             MessageLookupByLibrary.simpleMessage("إنشاء كلمة مرور جديدة"),
+        "events": MessageLookupByLibrary.simpleMessage("فعاليات"),
         "fromPreviouslyUsedPassword": MessageLookupByLibrary.simpleMessage(
             "عن كلمة المرور المستخدمة سابقا."),
+        "home": MessageLookupByLibrary.simpleMessage("الصفحة الرئيسية"),
         "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
         "loginSubTitle": MessageLookupByLibrary.simpleMessage(
             "الرجاء تسجيل الدخول للمتابعة"),
         "newPassword":
             MessageLookupByLibrary.simpleMessage("كلمة المرور الجديدة"),
+        "news": MessageLookupByLibrary.simpleMessage("الأخبار"),
         "oldPassword":
             MessageLookupByLibrary.simpleMessage("كلمة المرور السابقة"),
+        "payment": MessageLookupByLibrary.simpleMessage("الدفع"),
         "save": MessageLookupByLibrary.simpleMessage("حفظ"),
+        "you": MessageLookupByLibrary.simpleMessage("أنت"),
         "yourNewPasswordMustBeDifferent": MessageLookupByLibrary.simpleMessage(
             "يجب أن تكون كلمة المرور الجديدة مختلفة")
       };

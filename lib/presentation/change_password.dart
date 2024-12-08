@@ -23,7 +23,7 @@ class ChangePasswordScreen extends StatelessWidget {
                 children: [
                   IconButton.outlined(
                       onPressed: () {}, icon: const Icon(Icons.arrow_back)),
-                  const SizedBox(width: 50),
+                  const SizedBox(width: 40),
                   Text(S.of(context).createNewPassword,
                       style: TTextTheme.textTheme.titleLarge)
                 ],

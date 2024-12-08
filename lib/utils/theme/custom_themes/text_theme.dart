@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tanta_club/utils/helpers/helper_functions.dart';
 
 class TTextTheme {
   TTextTheme._();
@@ -23,7 +24,7 @@ class TTextTheme {
     ////////////////////////////////////////////////////////////////////
 
     titleLarge: const TextStyle().copyWith(
-        fontSize: 18.0,
+        fontSize: isArabic() ? 18.0 : 20.0,
         fontWeight: FontWeight.w500,
         fontFamily: 'Almarai',
         color: Colors.black),
