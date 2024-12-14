@@ -24,53 +24,44 @@ class NewsCard extends StatelessWidget {
               child: Image.asset(
                 news.newImg,
                 height: 150,
-                width: double.infinity,
+                width: 200,
                 fit: BoxFit.cover,
               ),
             ),
-            Container(
-              height: 150,
-              alignment:
-                  isArabic() ? Alignment.bottomRight : Alignment.bottomLeft,
-              padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
-              decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
-                      colors: [
-                    Colors.black.withOpacity(0),
-                    Colors.black.withOpacity(0.8),
-                  ],
-                      stops: const [
-                    0.6,
-                    1
-                  ])),
-              child: Text(
-                news.title,
-                style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 18,
-                    fontWeight: FontWeight.w600),
-                //overflow: TextOverflow.fade,
-              ),
-            )
           ]),
           Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: Row(
+            padding: const EdgeInsets.only(top: 5.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                const Icon(
-                  Icons.calendar_month,
-                  color: Color.fromARGB(255, 184, 184, 184),
-                  size: 20,
-                ),
-                const SizedBox(
-                  width: 6,
-                ),
                 Text(
-                  news.date,
-                  style: Theme.of(context).textTheme.bodySmall,
-                )
+                  news.title,
+                  style: const TextStyle(
+                    color: Color.fromARGB(255, 60, 60, 60),
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600,
+                  ),
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                ),
+                const SizedBox(height: 5),
+                Row(
+                  children: [
+                    const Icon(
+                      Icons.calendar_month,
+                      color: Color.fromARGB(255, 184, 184, 184),
+                      size: 16,
+                    ),
+                    const SizedBox(
+                      width: 6,
+                    ),
+                    Text(
+                      news.date,
+                      style: TextStyle(
+                          fontSize: 10, color: Colors.black.withOpacity(0.5)),
+                    )
+                  ],
+                ),
               ],
             ),
           )

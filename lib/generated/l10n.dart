@@ -219,6 +219,96 @@ class S {
       args: [],
     );
   }
+
+  /// `View All`
+  String get viewAll {
+    return Intl.message(
+      'View All',
+      name: 'viewAll',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sports`
+  String get sports {
+    return Intl.message(
+      'Sports',
+      name: 'sports',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Football`
+  String get football {
+    return Intl.message(
+      'Football',
+      name: 'football',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Basketball`
+  String get basketball {
+    return Intl.message(
+      'Basketball',
+      name: 'basketball',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Crossfit`
+  String get crossfit {
+    return Intl.message(
+      'Crossfit',
+      name: 'crossfit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Boxing`
+  String get boxing {
+    return Intl.message(
+      'Boxing',
+      name: 'boxing',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Running`
+  String get running {
+    return Intl.message(
+      'Running',
+      name: 'running',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `TennisBall`
+  String get tennisball {
+    return Intl.message(
+      'TennisBall',
+      name: 'tennisball',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tanta Club`
+  String get tantaclub {
+    return Intl.message(
+      'Tanta Club',
+      name: 'tantaclub',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

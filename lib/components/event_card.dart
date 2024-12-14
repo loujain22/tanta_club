@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:tanta_club/models/event.dart';
 import 'package:tanta_club/utils/helpers/helper_functions.dart';
 
 class EventsCard extends StatelessWidget {
-  const EventsCard({super.key});
+  const EventsCard({super.key, required this.events});
+
+  final Event events;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +22,7 @@ class EventsCard extends StatelessWidget {
               borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(15), topRight: Radius.circular(15)),
               child: Image.asset(
-                "assets/images/footballNew.jpg",
+                events.img,
                 height: 150,
                 width: double.infinity,
                 fit: BoxFit.cover,
@@ -42,13 +45,13 @@ class EventsCard extends StatelessWidget {
                     0.6,
                     1
                   ])),
-              child: const Text(
-                "The Golden Boot Challenge",
-                style: TextStyle(
+              child: Text(
+                events.title,
+                style: const TextStyle(
                     color: Colors.white,
                     fontSize: 18,
                     fontWeight: FontWeight.w600),
-                //overflow: TextOverflow.fade,
+                overflow: TextOverflow.fade,
               ),
             )
           ]),
@@ -68,7 +71,7 @@ class EventsCard extends StatelessWidget {
                       width: 6,
                     ),
                     Text(
-                      'Tanta Club',
+                      events.place,
                       style: Theme.of(context).textTheme.bodySmall,
                     )
                   ],
@@ -84,7 +87,7 @@ class EventsCard extends StatelessWidget {
                       width: 6,
                     ),
                     Text(
-                      'Oct 11, 2024   05:00 PM',
+                      events.date,
                       style: Theme.of(context).textTheme.bodySmall,
                     )
                   ],

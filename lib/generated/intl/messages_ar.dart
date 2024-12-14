@@ -25,11 +25,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "Password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
         "Signin": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
         "Username": MessageLookupByLibrary.simpleMessage("إسم المستخدم"),
+        "basketball": MessageLookupByLibrary.simpleMessage("كرة السلة"),
+        "boxing": MessageLookupByLibrary.simpleMessage("ملاكمة"),
         "confirmNewPassword":
             MessageLookupByLibrary.simpleMessage("تأكيد كلمة المرور"),
         "createNewPassword":
             MessageLookupByLibrary.simpleMessage("إنشاء كلمة مرور جديدة"),
+        "crossfit": MessageLookupByLibrary.simpleMessage("لياقة بدنية"),
         "events": MessageLookupByLibrary.simpleMessage("فعاليات"),
+        "football": MessageLookupByLibrary.simpleMessage("كرة القدم"),
         "fromPreviouslyUsedPassword": MessageLookupByLibrary.simpleMessage(
             "عن كلمة المرور المستخدمة سابقا."),
         "home": MessageLookupByLibrary.simpleMessage("الصفحة الرئيسية"),
@@ -42,7 +46,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "oldPassword":
             MessageLookupByLibrary.simpleMessage("كلمة المرور السابقة"),
         "payment": MessageLookupByLibrary.simpleMessage("الدفع"),
+        "running": MessageLookupByLibrary.simpleMessage("رياضة الجري"),
         "save": MessageLookupByLibrary.simpleMessage("حفظ"),
+        "sports": MessageLookupByLibrary.simpleMessage("الأنشطة الرياضية"),
+        "tantaclub": MessageLookupByLibrary.simpleMessage("نادي طنطة"),
+        "tennisball": MessageLookupByLibrary.simpleMessage("كرة التنس"),
+        "viewAll": MessageLookupByLibrary.simpleMessage("عرض المزيد"),
         "you": MessageLookupByLibrary.simpleMessage("أنت"),
         "yourNewPasswordMustBeDifferent": MessageLookupByLibrary.simpleMessage(
             "يجب أن تكون كلمة المرور الجديدة مختلفة")

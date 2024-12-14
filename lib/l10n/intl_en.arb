@@ -16,7 +16,16 @@
    "events" : "Events",
    "news" : "News",
    "payment" : "Payment",
-   "you" : "You"
+   "you" : "You",
+   "viewAll" : "View All",
+   "sports" : "Sports",
+   "football" : "Football",
+   "basketball" : "Basketball",
+   "crossfit" : "Crossfit",
+   "boxing" : "Boxing",
+   "running" : "Running",
+   "tennisball" : "TennisBall",
+   "tantaclub" :"Tanta Club"
 
 
 }

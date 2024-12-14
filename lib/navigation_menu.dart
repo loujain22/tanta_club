@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 import 'package:tanta_club/generated/l10n.dart';
 import 'package:tanta_club/presentation/events.dart';
-import 'package:tanta_club/presentation/home.dart';
+import 'package:tanta_club/presentation/home/home.dart';
 import 'package:tanta_club/presentation/member_profile.dart';
 import 'package:tanta_club/presentation/news.dart';
 import 'package:tanta_club/presentation/payment.dart';
@@ -26,12 +26,8 @@ class NavigationMenu extends StatelessWidget {
                   controller.selectedIndex.value = index,
               indicatorColor: TColors.primary,
               destinations: [
-                Padding(
-                  padding: EdgeInsets.only(right: isArabic() ? 30 : 0),
-                  child: NavigationDestination(
-                      icon: const Icon(Iconsax.home),
-                      label: S.of(context).home),
-                ),
+                NavigationDestination(
+                    icon: const Icon(Iconsax.home), label: S.of(context).home),
                 NavigationDestination(
                     icon: const Icon(Iconsax.calendar),
                     label: S.of(context).events),
