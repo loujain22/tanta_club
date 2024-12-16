@@ -55,7 +55,7 @@ class TTextTheme {
         fontSize: 14.0,
         fontWeight: FontWeight.w500,
         fontFamily: 'Almarai',
-        color: Colors.black.withOpacity(0.5)),
+        color: Colors.black.withAlpha(128)),
 
     ///////////////////////////////////////////////////////////////////////////
 

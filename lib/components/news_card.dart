@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:tanta_club/models/news.dart';
-import 'package:tanta_club/utils/helpers/helper_functions.dart';
 
 class NewsCard extends StatelessWidget {
   const NewsCard({super.key, required this.news});

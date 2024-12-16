@@ -5,7 +5,6 @@ import 'package:tanta_club/generated/l10n.dart';
 import 'package:tanta_club/navigation_menu.dart';
 import 'package:tanta_club/utils/helpers/helper_functions.dart';
 import 'package:tanta_club/utils/theme/custom_themes/text_theme.dart';
-import 'package:intl/intl.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -25,7 +24,7 @@ class _LoginScreenState extends State<LoginScreen> {
             padding: const EdgeInsets.only(top: 90),
             child: Center(
                 child: Image.asset("assets/logos/logo.png",
-                    height: 230, width: 230)),
+                    height: 210, width: 210)),
           ),
           // -- Title & SubTitle
           Padding(
