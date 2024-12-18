@@ -300,6 +300,16 @@ class S {
     );
   }
 
+  /// `Your Profile`
+  String get userProfile {
+    return Intl.message(
+      'Your Profile',
+      name: 'userProfile',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Tanta Club`
   String get tantaclub {
     return Intl.message(

@@ -51,6 +51,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "sports": MessageLookupByLibrary.simpleMessage("الأنشطة الرياضية"),
         "tantaclub": MessageLookupByLibrary.simpleMessage("نادي طنطة"),
         "tennisball": MessageLookupByLibrary.simpleMessage("كرة التنس"),
+        "userProfile": MessageLookupByLibrary.simpleMessage("صفحتك الشخصية"),
         "viewAll": MessageLookupByLibrary.simpleMessage("عرض المزيد"),
         "you": MessageLookupByLibrary.simpleMessage("أنت"),
         "yourNewPasswordMustBeDifferent": MessageLookupByLibrary.simpleMessage(

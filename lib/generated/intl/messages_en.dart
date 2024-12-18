@@ -49,6 +49,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "sports": MessageLookupByLibrary.simpleMessage("Sports"),
         "tantaclub": MessageLookupByLibrary.simpleMessage("Tanta Club"),
         "tennisball": MessageLookupByLibrary.simpleMessage("TennisBall"),
+        "userProfile": MessageLookupByLibrary.simpleMessage("Your Profile"),
         "viewAll": MessageLookupByLibrary.simpleMessage("View All"),
         "you": MessageLookupByLibrary.simpleMessage("You"),
         "yourNewPasswordMustBeDifferent": MessageLookupByLibrary.simpleMessage(
