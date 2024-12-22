@@ -22,9 +22,12 @@ class ChangePasswordScreen extends StatelessWidget {
               child: Row(
                 children: [
                   IconButton.outlined(
-                      onPressed: () {}, icon: const Icon(Icons.arrow_back)),
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      icon: const Icon(Icons.arrow_back)),
                   const SizedBox(width: 40),
-                  Text(S.of(context).createNewPassword,
+                  Text(S.of(context)!.createNewPassword,
                       style: TTextTheme.textTheme.titleLarge)
                 ],
               ),
@@ -42,9 +45,9 @@ class ChangePasswordScreen extends StatelessWidget {
           // --  Description
           Column(
             children: [
-              Text(S.of(context).yourNewPasswordMustBeDifferent,
+              Text(S.of(context)!.yourNewPasswordMustBeDifferent,
                   style: TTextTheme.textTheme.titleMedium),
-              Text(S.of(context).fromPreviouslyUsedPassword,
+              Text(S.of(context)!.fromPreviouslyUsedPassword,
                   style: TTextTheme.textTheme.titleMedium)
             ],
           ),
@@ -60,7 +63,7 @@ class ChangePasswordScreen extends StatelessWidget {
                 TextFormField(
                   decoration: InputDecoration(
                       prefixIcon: const Icon(Iconsax.password_check),
-                      labelText: S.of(context).oldPassword),
+                      labelText: S.of(context)!.oldPassword),
                 ),
 
                 const SizedBox(height: 15),
@@ -70,7 +73,7 @@ class ChangePasswordScreen extends StatelessWidget {
                   decoration: InputDecoration(
                       prefixIcon: const Icon(Iconsax.password_check),
                       suffixIcon: const Icon(Iconsax.eye_slash),
-                      labelText: S.of(context).newPassword),
+                      labelText: S.of(context)!.newPassword),
                 ),
 
                 const SizedBox(height: 15),
@@ -80,7 +83,7 @@ class ChangePasswordScreen extends StatelessWidget {
                   decoration: InputDecoration(
                       prefixIcon: const Icon(Iconsax.password_check),
                       suffixIcon: const Icon(Iconsax.eye_slash),
-                      labelText: S.of(context).confirmNewPassword),
+                      labelText: S.of(context)!.confirmNewPassword),
                 ),
 
                 const SizedBox(height: 25),
@@ -90,7 +93,7 @@ class ChangePasswordScreen extends StatelessWidget {
                   width: double.infinity,
                   child: ElevatedButton(
                       onPressed: () {},
-                      child: Text(S.of(context).save,
+                      child: Text(S.of(context)!.save,
                           style: TTextTheme.textTheme.titleLarge)),
                 )
               ],

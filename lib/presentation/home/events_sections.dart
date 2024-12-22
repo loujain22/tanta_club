@@ -24,13 +24,13 @@ class EventsSection extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                S.of(context).events,
+                S.of(context)!.events,
                 style: TTextTheme.textTheme.headlineSmall,
               ),
               Row(
                 children: [
                   Text(
-                    S.of(context).viewAll,
+                    S.of(context)!.viewAll,
                     style: TTextTheme.textTheme.bodyMedium,
                   ),
                   const Icon(Icons.arrow_right)

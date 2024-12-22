@@ -48,7 +48,7 @@ class SportsSection extends StatelessWidget {
           padding: EdgeInsets.only(
               right: isArabic() ? 20 : 5, left: isArabic() ? 5 : 20),
           child: Text(
-            S.of(context).sports,
+            S.of(context)!.sports,
             style: TTextTheme.textTheme.headlineSmall,
           ),
         ),
@@ -58,17 +58,17 @@ class SportsSection extends StatelessWidget {
           child: Row(
             children: [
               buildCircleAvatar(
-                  'assets/images/football.png', S.of(context).football),
+                  'assets/images/football.png', S.of(context)!.football),
               buildCircleAvatar(
-                  'assets/images/basketball.png', S.of(context).basketball),
+                  'assets/images/basketball.png', S.of(context)!.basketball),
               buildCircleAvatar(
-                  'assets/images/crossfit.png', S.of(context).crossfit),
+                  'assets/images/crossfit.png', S.of(context)!.crossfit),
               buildCircleAvatar(
-                  'assets/images/boxing.png', S.of(context).boxing),
+                  'assets/images/boxing.png', S.of(context)!.boxing),
               buildCircleAvatar(
-                  'assets/images/running.png', S.of(context).running),
+                  'assets/images/running.png', S.of(context)!.running),
               buildCircleAvatar(
-                  'assets/images/tennisball.png', S.of(context).tennisball),
+                  'assets/images/tennisball.png', S.of(context)!.tennisball),
             ],
           ),
         ),

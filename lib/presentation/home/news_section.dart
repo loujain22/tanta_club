@@ -21,13 +21,13 @@ class NewsSection extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                S.of(context).news,
+                S.of(context)!.news,
                 style: TTextTheme.textTheme.headlineSmall,
               ),
               Row(
                 children: [
                   Text(
-                    S.of(context).viewAll,
+                    S.of(context)!.viewAll,
                     style: TTextTheme.textTheme.bodyMedium,
                   ),
                   const Icon(Icons.arrow_right)

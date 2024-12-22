@@ -7,8 +7,7 @@
 // ignore_for_file:unnecessary_brace_in_string_interps, unnecessary_new
 // ignore_for_file:prefer_single_quotes,comment_references, directives_ordering
 // ignore_for_file:annotate_overrides,prefer_generic_function_type_aliases
-// ignore_for_file:unused_import, file_names, avoid_escaping_inner_quotes
-// ignore_for_file:unnecessary_string_interpolations, unnecessary_string_escapes
+// ignore_for_file:unused_import, file_names
 
 import 'package:intl/intl.dart';
 import 'package:intl/message_lookup_by_library.dart';
@@ -21,38 +20,37 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
-  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "Password": MessageLookupByLibrary.simpleMessage("Password"),
-        "Signin": MessageLookupByLibrary.simpleMessage("Sign in"),
-        "Username": MessageLookupByLibrary.simpleMessage("Username"),
-        "basketball": MessageLookupByLibrary.simpleMessage("Basketball"),
-        "boxing": MessageLookupByLibrary.simpleMessage("Boxing"),
-        "confirmNewPassword":
-            MessageLookupByLibrary.simpleMessage("Confirm New Password"),
-        "createNewPassword":
-            MessageLookupByLibrary.simpleMessage("Create New Password"),
-        "crossfit": MessageLookupByLibrary.simpleMessage("Crossfit"),
-        "events": MessageLookupByLibrary.simpleMessage("Events"),
-        "football": MessageLookupByLibrary.simpleMessage("Football"),
-        "fromPreviouslyUsedPassword": MessageLookupByLibrary.simpleMessage(
-            "From Previously Used Password."),
-        "home": MessageLookupByLibrary.simpleMessage("Home"),
-        "login": MessageLookupByLibrary.simpleMessage("Login"),
-        "loginSubTitle":
-            MessageLookupByLibrary.simpleMessage("Please Sign in to continue"),
-        "newPassword": MessageLookupByLibrary.simpleMessage("New Password"),
-        "news": MessageLookupByLibrary.simpleMessage("News"),
-        "oldPassword": MessageLookupByLibrary.simpleMessage("Old Password"),
-        "payment": MessageLookupByLibrary.simpleMessage("Payment"),
-        "running": MessageLookupByLibrary.simpleMessage("Running"),
-        "save": MessageLookupByLibrary.simpleMessage("Save"),
-        "sports": MessageLookupByLibrary.simpleMessage("Sports"),
-        "tantaclub": MessageLookupByLibrary.simpleMessage("Tanta Club"),
-        "tennisball": MessageLookupByLibrary.simpleMessage("TennisBall"),
-        "userProfile": MessageLookupByLibrary.simpleMessage("Your Profile"),
-        "viewAll": MessageLookupByLibrary.simpleMessage("View All"),
-        "you": MessageLookupByLibrary.simpleMessage("You"),
-        "yourNewPasswordMustBeDifferent": MessageLookupByLibrary.simpleMessage(
-            "Your New Password Must Be Different")
-      };
+  static _notInlinedMessages(_) => <String, Function> {
+    "Password" : MessageLookupByLibrary.simpleMessage("Password"),
+    "Signin" : MessageLookupByLibrary.simpleMessage("Sign in"),
+    "Username" : MessageLookupByLibrary.simpleMessage("Username"),
+    "basketball" : MessageLookupByLibrary.simpleMessage("Basketball"),
+    "boxing" : MessageLookupByLibrary.simpleMessage("Boxing"),
+    "card" : MessageLookupByLibrary.simpleMessage("Card"),
+    "confirmNewPassword" : MessageLookupByLibrary.simpleMessage("Confirm New Password"),
+    "createNewPassword" : MessageLookupByLibrary.simpleMessage("Create New Password"),
+    "crossfit" : MessageLookupByLibrary.simpleMessage("Crossfit"),
+    "events" : MessageLookupByLibrary.simpleMessage("Events"),
+    "fawry" : MessageLookupByLibrary.simpleMessage("Fawry"),
+    "football" : MessageLookupByLibrary.simpleMessage("Football"),
+    "fromPreviouslyUsedPassword" : MessageLookupByLibrary.simpleMessage("From Previously Used Password."),
+    "home" : MessageLookupByLibrary.simpleMessage("Home"),
+    "login" : MessageLookupByLibrary.simpleMessage("Login"),
+    "loginSubTitle" : MessageLookupByLibrary.simpleMessage("Please Sign in to continue"),
+    "logout" : MessageLookupByLibrary.simpleMessage("Logout"),
+    "newPassword" : MessageLookupByLibrary.simpleMessage("New Password"),
+    "news" : MessageLookupByLibrary.simpleMessage("News"),
+    "oldPassword" : MessageLookupByLibrary.simpleMessage("Old Password"),
+    "payment" : MessageLookupByLibrary.simpleMessage("Payment"),
+    "paymentMethods" : MessageLookupByLibrary.simpleMessage("Payment Methods"),
+    "running" : MessageLookupByLibrary.simpleMessage("Running"),
+    "save" : MessageLookupByLibrary.simpleMessage("Save"),
+    "sports" : MessageLookupByLibrary.simpleMessage("Sports"),
+    "tantaclub" : MessageLookupByLibrary.simpleMessage("Tanta Club"),
+    "tennisball" : MessageLookupByLibrary.simpleMessage("TennisBall"),
+    "userProfile" : MessageLookupByLibrary.simpleMessage("Your Profile"),
+    "viewAll" : MessageLookupByLibrary.simpleMessage("View All"),
+    "you" : MessageLookupByLibrary.simpleMessage("You"),
+    "yourNewPasswordMustBeDifferent" : MessageLookupByLibrary.simpleMessage("Your New Password Must Be Different")
+  };
 }

@@ -33,7 +33,7 @@ class EventsScreen extends StatelessWidget {
                   onPressed: () {},
                   icon: const Icon(Icons.arrow_back)),
               const SizedBox(width: 110),
-              Text(S.of(context).events,
+              Text(S.of(context)!.events,
                   style: TTextTheme.textTheme.titleLarge),
             ],
           ),

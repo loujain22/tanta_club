@@ -12,7 +12,7 @@ class NewsScreen extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           toolbarHeight: 90,
-          title: Text(S.of(context).news),
+          title: Text(S.of(context)!.news),
           centerTitle: true,
           backgroundColor: TColors.primary,
           leading: IconButton.outlined(

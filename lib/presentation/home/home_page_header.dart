@@ -20,7 +20,7 @@ class HomePageHeader extends StatelessWidget {
             ),
             onPressed: () {},
             icon: const Icon(Icons.menu)),
-        Text(S.of(context).home, style: TTextTheme.textTheme.titleLarge),
+        Text(S.of(context)!.home, style: TTextTheme.textTheme.titleLarge),
         IconButton.outlined(
             style: OutlinedButton.styleFrom(
               side: const BorderSide(width: 3.0, color: TColors.primary),

@@ -61,7 +61,7 @@ class BigEventWidget extends StatelessWidget {
                             size: 18),
                         const SizedBox(width: 6),
                         Text(
-                          S.of(context).tantaclub,
+                          S.of(context)!.tantaclub,
                           style: const TextStyle(
                               color: Colors.white, fontSize: 12),
                         )

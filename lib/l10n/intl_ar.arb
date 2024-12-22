@@ -25,7 +25,11 @@
    "running" : "رياضة الجري",
    "tennisball" : "كرة التنس",
    "userProfile" : "صفحتك الشخصية",
-   "tantaclub" : "نادي طنطة"
+   "tantaclub" : "نادي طنطة",
+   "logout" : "تسجبل الخروج",
+   "paymentMethods" : "طرق الدفع",
+   "card" : "بطاقة إئتمانية أو فيزا",
+   "fawry" : "فوري"
    
 
 }

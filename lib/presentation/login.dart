@@ -36,10 +36,10 @@ class _LoginScreenState extends State<LoginScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(S.of(context).login,
+                  Text(S.of(context)!.login,
                       style: TTextTheme.textTheme.headlineMedium),
                   const SizedBox(height: 5),
-                  Text(S.of(context).loginSubTitle,
+                  Text(S.of(context)!.loginSubTitle,
                       style: TTextTheme.textTheme.bodyLarge),
                 ],
               )),
@@ -54,7 +54,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 TextFormField(
                   decoration: InputDecoration(
                       prefixIcon: const Icon(Iconsax.user),
-                      labelText: S.of(context).Username),
+                      labelText: S.of(context)!.Username),
                 ),
 
                 const SizedBox(height: 15),
@@ -64,7 +64,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   decoration: InputDecoration(
                       prefixIcon: const Icon(Iconsax.password_check),
                       suffixIcon: const Icon(Iconsax.eye_slash),
-                      labelText: S.of(context).Password),
+                      labelText: S.of(context)!.Password),
                 ),
 
                 const SizedBox(height: 25),
@@ -74,7 +74,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   width: double.infinity,
                   child: ElevatedButton(
                       onPressed: () => Get.to(() => const NavigationMenu()),
-                      child: Text(S.of(context).Signin,
+                      child: Text(S.of(context)!.Signin,
                           style: TTextTheme.textTheme.titleLarge)),
                 )
               ],

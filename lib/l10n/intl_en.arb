@@ -26,7 +26,12 @@
    "running" : "Running",
    "tennisball" : "TennisBall",
    "userProfile" : "Your Profile",
-   "tantaclub" :"Tanta Club"
+   "tantaclub" :"Tanta Club",
+   "logout" : "Logout",
+   "paymentMethods" : "Payment Methods",
+   "card" : "Card",
+   "fawry" : "Fawry"
+   
 
 
 }
