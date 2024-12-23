@@ -344,6 +344,66 @@ class S {
       args: [],
     );
   }
+
+  /// `Invoices`
+  String get invoices {
+    return Intl.message(
+      'Invoices',
+      name: 'invoices',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please select the invoice(s) `
+  String get invoiceSubtitle1 {
+    return Intl.message(
+      'Please select the invoice(s) ',
+      name: 'invoiceSubtitle1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `you'd like to pay.`
+  String get invoiceSubtitle2 {
+    return Intl.message(
+      'you\'d like to pay.',
+      name: 'invoiceSubtitle2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Remaining Amount`
+  String get remainingAmount {
+    return Intl.message(
+      'Remaining Amount',
+      name: 'remainingAmount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Invoice Id`
+  String get invoiceId {
+    return Intl.message(
+      'Invoice Id',
+      name: 'invoiceId',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Invoice Type`
+  String get invoiceType {
+    return Intl.message(
+      'Invoice Type',
+      name: 'invoiceType',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

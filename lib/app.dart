@@ -8,7 +8,7 @@ import 'package:tanta_club/presentation/Invoices/invoices.dart';
 import 'package:tanta_club/presentation/change_password.dart';
 import 'package:tanta_club/presentation/login.dart';
 import 'package:tanta_club/presentation/payment-methods/payment_methods.dart';
-import 'package:tanta_club/presentation/UserProfile/user_profile.dart';
+import 'package:tanta_club/presentation/user-profile/user_profile.dart';
 import 'package:tanta_club/utils/theme/custom_themes/theme.dart';
 
 class App extends StatefulWidget {
@@ -32,7 +32,7 @@ class _AppState extends State<App> {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      locale: const Locale('ar'),
+      locale: const Locale('en'),
       supportedLocales: S.delegate.supportedLocales,
       localizationsDelegates: const [
         S.delegate,

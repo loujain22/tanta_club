@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tanta_club/generated/l10n.dart';
-import 'package:tanta_club/presentation/UserProfile/user_profile_header.dart';
-import 'package:tanta_club/presentation/UserProfile/user_profile_image.dart';
-import 'package:tanta_club/presentation/UserProfile/user_profile_items.dart';
+import 'package:tanta_club/presentation/user-profile/user_profile_header.dart';
+import 'package:tanta_club/presentation/user-profile/user_profile_image.dart';
+import 'package:tanta_club/presentation/user-profile/user_profile_items.dart';
 import 'package:tanta_club/presentation/change_password.dart';
 import 'package:tanta_club/utils/helpers/helper_functions.dart';
 

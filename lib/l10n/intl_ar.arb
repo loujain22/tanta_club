@@ -29,7 +29,13 @@
    "logout" : "تسجبل الخروج",
    "paymentMethods" : "طرق الدفع",
    "card" : "بطاقة إئتمانية أو فيزا",
-   "fawry" : "فوري"
+   "fawry" : "فوري",
+   "invoices" : "الفواتير",
+   "invoiceSubtitle1" : "الرجاء تحديد الفاتورة (الفواتير) ",
+   "invoiceSubtitle2" : "التي ترغب في دفعها.",
+   "remainingAmount" : "المبلغ المتبقي",
+   "invoiceId" : "رقم الفاتورة",
+   "invoiceType" :"نوع الفاتورة"
    
 
 }

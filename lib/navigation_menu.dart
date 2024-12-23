@@ -5,7 +5,7 @@ import 'package:tanta_club/generated/l10n.dart';
 import 'package:tanta_club/presentation/events/events.dart';
 import 'package:tanta_club/presentation/home/home.dart';
 import 'package:tanta_club/presentation/news/news.dart';
-import 'package:tanta_club/presentation/UserProfile/user_profile.dart';
+import 'package:tanta_club/presentation/user-profile/user_profile.dart';
 import 'package:tanta_club/style/colors.dart';
 
 class NavigationMenu extends StatelessWidget {

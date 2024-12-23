@@ -30,7 +30,13 @@
    "logout" : "Logout",
    "paymentMethods" : "Payment Methods",
    "card" : "Card",
-   "fawry" : "Fawry"
+   "fawry" : "Fawry",
+   "invoices" : "Invoices",
+   "invoiceSubtitle1" : "Please select the invoice(s) ",
+   "invoiceSubtitle2" : "you'd like to pay.",
+   "remainingAmount" : "Remaining Amount",
+   "invoiceId" : "Invoice Id",
+   "invoiceType" :"Invoice Type"
    
 
 
