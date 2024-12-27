@@ -33,9 +33,21 @@
    "invoices" : "الفواتير",
    "invoiceSubtitle1" : "الرجاء تحديد الفاتورة (الفواتير) ",
    "invoiceSubtitle2" : "التي ترغب في دفعها.",
-   "remainingAmount" : "المبلغ المتبقي",
-   "invoiceId" : "رقم الفاتورة",
-   "invoiceType" :"نوع الفاتورة"
+   "remainingAmount" : "المبلغ المتبقي:",
+   "invoiceId" : "رقم الفاتورة:",
+   "invoiceType" :"نوع الفاتورة:",
+   "installmentSubtitle1" : "الرجاء تحديد القسط (الأقساط)",
+   "installmentSubtitle2" : "التي ترغب في دفعها.",
+   "itemName" : "إسم العنصر:",
+   "dateOfFirstInstallment" : "تاريخ الدفعة الاولى:",
+   "installments" : "الأقساط",
+   "installment" : "القسط:",
+   "dInstallment" : "تحديد القسط",
+   "total" : "الإجمالي:",
+   "pleaseEnterUsername" : "الرجاء إدخال إسم المستخدم.",
+   "pleaseEnterPassword" : "الرجاء إدخال كلمة المرور.",
+   "pleaseEnterInstallment" : "الرجاء إدخال القسط.",
+   "installmentPlaceholder" : "أدخل القسط/الأقساط"
    
 
 }

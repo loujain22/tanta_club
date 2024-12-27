@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tanta_club/generated/l10n.dart';
 import 'package:tanta_club/presentation/Invoices/invoice_card.dart';
-import 'package:tanta_club/presentation/user-profile/user_profile.dart';
+import 'package:tanta_club/presentation/payment-methods/payment_methods.dart';
 import 'package:tanta_club/utils/helpers/helper_functions.dart';
 import 'package:tanta_club/utils/theme/custom_themes/text_theme.dart';
 
@@ -23,7 +23,7 @@ class _InvoicesScreenState extends State<InvoicesScreen> {
           width: double.infinity,
           margin: const EdgeInsets.all(10),
           child: ElevatedButton(
-              onPressed: () => Get.to(() => const UserProfileScreen()),
+              onPressed: () => Get.to(() => const PaymentMethodsScreen()),
               child: Text(S.of(context)!.payment,
                   style: TTextTheme.textTheme.titleLarge)),
         ),
@@ -48,7 +48,8 @@ class _InvoicesScreenState extends State<InvoicesScreen> {
               padding: EdgeInsets.only(
                   top: 20,
                   left: isArabic() ? 0 : 40,
-                  right: isArabic() ? 40 : 0),
+                  right: isArabic() ? 40 : 0,
+                  bottom: 10),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -61,25 +62,27 @@ class _InvoicesScreenState extends State<InvoicesScreen> {
                 ],
               ),
             ),
-            const InvoiceCard(
+            //------------------------------------------------------------------------
+            // -- Use ListView.builder
+            InvoiceCard(
               remainingAmount: "1.550.00",
               invoiceId: "658",
-              invoiceType: "Renewal",
+              invoiceType: isArabic() ? "تجديد" : "Renewal",
             ),
-            const InvoiceCard(
+            InvoiceCard(
               remainingAmount: "1.550.00",
               invoiceId: "658",
-              invoiceType: "Renewal",
+              invoiceType: isArabic() ? "تجديد" : "Renewal",
             ),
-            const InvoiceCard(
+            InvoiceCard(
               remainingAmount: "1.550.00",
               invoiceId: "658",
-              invoiceType: "Renewal",
+              invoiceType: isArabic() ? "تجديد" : "Renewal",
             ),
-            const InvoiceCard(
+            InvoiceCard(
               remainingAmount: "1.550.00",
               invoiceId: "658",
-              invoiceType: "Renewal",
+              invoiceType: isArabic() ? "تجديد" : "Renewal",
             ),
           ],
         ));

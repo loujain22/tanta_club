@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tanta_club/generated/l10n.dart';
-import 'package:tanta_club/presentation/payment-methods/payment-methods-card.dart';
+import 'package:tanta_club/presentation/payment-methods/payment_methods_card.dart';
 import 'package:tanta_club/utils/helpers/helper_functions.dart';
 
 class PaymentMethodsScreen extends StatefulWidget {

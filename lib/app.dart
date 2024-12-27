@@ -6,6 +6,7 @@ import 'package:tanta_club/generated/intl/messages_ar.dart';
 import 'package:tanta_club/generated/l10n.dart';
 import 'package:tanta_club/presentation/Invoices/invoices.dart';
 import 'package:tanta_club/presentation/change_password.dart';
+import 'package:tanta_club/presentation/installments/installments.dart';
 import 'package:tanta_club/presentation/login.dart';
 import 'package:tanta_club/presentation/payment-methods/payment_methods.dart';
 import 'package:tanta_club/presentation/user-profile/user_profile.dart';
@@ -32,7 +33,7 @@ class _AppState extends State<App> {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      locale: const Locale('en'),
+      locale: const Locale('ar'),
       supportedLocales: S.delegate.supportedLocales,
       localizationsDelegates: const [
         S.delegate,
@@ -43,7 +44,7 @@ class _AppState extends State<App> {
       title: 'Tanta',
       theme: TAppTheme.arabicAppTheme,
       //home: UserProfile(onLocaleChange: setLocale),
-      home: const InvoicesScreen(),
+      home: const LoginScreen(),
     );
   }
 }

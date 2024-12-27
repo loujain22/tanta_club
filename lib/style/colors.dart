@@ -9,4 +9,5 @@ class TColors {
   static const Color btnfillcolor = Color(0xFFEDEDED);
   static const Color userProfileTextColor = Color(0xFF2E3193);
   static const Color lightGrey = Color(0xFF544C4C);
+  static const Color cardBackground = Color(0xFFFDF5D5);
 }

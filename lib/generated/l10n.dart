@@ -375,31 +375,151 @@ class S {
     );
   }
 
-  /// `Remaining Amount`
+  /// `Remaining Amount:`
   String get remainingAmount {
     return Intl.message(
-      'Remaining Amount',
+      'Remaining Amount:',
       name: 'remainingAmount',
       desc: '',
       args: [],
     );
   }
 
-  /// `Invoice Id`
+  /// `Invoice Id:`
   String get invoiceId {
     return Intl.message(
-      'Invoice Id',
+      'Invoice Id:',
       name: 'invoiceId',
       desc: '',
       args: [],
     );
   }
 
-  /// `Invoice Type`
+  /// `Invoice Type:`
   String get invoiceType {
     return Intl.message(
-      'Invoice Type',
+      'Invoice Type:',
       name: 'invoiceType',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please select the installment(s)`
+  String get installmentSubtitle1 {
+    return Intl.message(
+      'Please select the installment(s)',
+      name: 'installmentSubtitle1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `you'd like to pay.`
+  String get installmentSubtitle2 {
+    return Intl.message(
+      'you\'d like to pay.',
+      name: 'installmentSubtitle2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Item Name:`
+  String get itemName {
+    return Intl.message(
+      'Item Name:',
+      name: 'itemName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Date Of First Installment:`
+  String get dateOfFirstInstallment {
+    return Intl.message(
+      'Date Of First Installment:',
+      name: 'dateOfFirstInstallment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Installments`
+  String get installments {
+    return Intl.message(
+      'Installments',
+      name: 'installments',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Installment:`
+  String get installment {
+    return Intl.message(
+      'Installment:',
+      name: 'installment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Installments`
+  String get dInstallment {
+    return Intl.message(
+      'Installments',
+      name: 'dInstallment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Total:`
+  String get total {
+    return Intl.message(
+      'Total:',
+      name: 'total',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter username.`
+  String get pleaseEnterUsername {
+    return Intl.message(
+      'Please enter username.',
+      name: 'pleaseEnterUsername',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter password.`
+  String get pleaseEnterPassword {
+    return Intl.message(
+      'Please enter password.',
+      name: 'pleaseEnterPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter installment.`
+  String get pleaseEnterInstallment {
+    return Intl.message(
+      'Please enter installment.',
+      name: 'pleaseEnterInstallment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter intallment/s`
+  String get installmentPlaceholder {
+    return Intl.message(
+      'Enter intallment/s',
+      name: 'installmentPlaceholder',
       desc: '',
       args: [],
     );
