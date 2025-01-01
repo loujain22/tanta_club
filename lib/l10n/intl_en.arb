@@ -34,9 +34,22 @@
    "invoices" : "Invoices",
    "invoiceSubtitle1" : "Please select the invoice(s) ",
    "invoiceSubtitle2" : "you'd like to pay.",
-   "remainingAmount" : "Remaining Amount",
-   "invoiceId" : "Invoice Id",
-   "invoiceType" :"Invoice Type"
+   "remainingAmount" : "Remaining Amount:",
+   "invoiceId" : "Invoice Id:",
+   "invoiceType" :"Invoice Type:",
+   "installmentSubtitle1" : "Please select the installment(s)",
+   "installmentSubtitle2" : "you'd like to pay.",
+    "itemName" : "Item Name:",
+   "dateOfFirstInstallment" : "Date Of First Installment:",
+   "installments" : "Installments",
+   "installment" : "Installment:",
+   "dInstallment" : "Installments",
+   "total" : "Total:",
+   "pleaseEnterUsername" : "Please enter username.",
+   "pleaseEnterPassword" : "Please enter password.",
+   "pleaseEnterInstallment" : "Please enter installment.",
+   "installmentPlaceholder" : "Enter intallment/s"
+
    
 
 
