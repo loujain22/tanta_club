@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:tanta_club/components/messages/messages.dart';
+import 'package:tanta_club/components/messages/messages_widget.dart';
 import 'package:tanta_club/generated/intl/messages_ar.dart';
 import 'package:tanta_club/generated/l10n.dart';
 import 'package:tanta_club/presentation/Invoices/invoices.dart';
@@ -20,20 +21,11 @@ class App extends StatefulWidget {
 }
 
 class _AppState extends State<App> {
-  // Locale _locale = const Locale('ar'); // Default locale
-
-  // void setLocale(Locale locale) {
-  //   setState(() {
-  //     _locale = locale;
-  //   });
-  // }
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      locale: const Locale('ar'),
+      locale: const Locale('en'),
       supportedLocales: S.delegate.supportedLocales,
       localizationsDelegates: const [
         S.delegate,
@@ -41,9 +33,12 @@ class _AppState extends State<App> {
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
-      title: 'Tanta',
       theme: TAppTheme.arabicAppTheme,
-      //home: UserProfile(onLocaleChange: setLocale),
+      builder: (context, child) {
+        return MessagesWidget(
+          child: child ?? const SizedBox(),
+        );
+      },
       home: const LoginScreen(),
     );
   }

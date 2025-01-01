@@ -20,7 +20,7 @@
    "sports" : "الأنشطة الرياضية",
    "football" : "كرة القدم",
    "basketball" : "كرة السلة",
-   "crossfit" : "لياقة بدنية",
+   "crossfit" : "كروس فيت",
    "boxing" : "ملاكمة",
    "running" : "رياضة الجري",
    "tennisball" : "كرة التنس",
@@ -47,7 +47,15 @@
    "pleaseEnterUsername" : "الرجاء إدخال إسم المستخدم.",
    "pleaseEnterPassword" : "الرجاء إدخال كلمة المرور.",
    "pleaseEnterInstallment" : "الرجاء إدخال القسط.",
-   "installmentPlaceholder" : "أدخل القسط/الأقساط"
-   
-
+   "installmentPlaceholder" : "أدخل القسط/الأقساط",
+   "username": "اسم المستخدم",
+   "signIn": "تسجيل الدخول",
+   "oldPassword": "كلمة المرور القديمة",
+   "confirmNewPassword": "تأكيد كلمة المرور الجديدة",
+   "upcomingEvents": "الفعاليات",
+   "viewAllEvents": "عرض الكل",
+   "tryAgain": "حاول مرة أخرى",
+   "noNewsAvailable": "لا توجد أخبار متاحة",
+   "noEventsFound": "لا توجد فعاليات متاحة",
+   "readMore": "اقرأ المزيد"
 }

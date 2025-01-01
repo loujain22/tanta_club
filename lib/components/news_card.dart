@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:tanta_club/models/news.dart';
+import 'package:tanta_club/models/news_model.dart';
+import 'package:tanta_club/utils/helpers/helper_functions.dart';
+import 'package:tanta_club/utils/keys.dart';
 
 class NewsCard extends StatelessWidget {
-  const NewsCard({super.key, required this.news});
+  final NewsModel news;
 
-  final News news;
+  const NewsCard({
+    super.key,
+    required this.news,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -14,57 +19,67 @@ class NewsCard extends StatelessWidget {
       ),
       elevation: 7,
       margin: const EdgeInsets.all(10),
-      child: Column(
-        children: [
-          Stack(children: [
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(15),
+          color: Colors.white,
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
             ClipRRect(
               borderRadius: const BorderRadius.only(
-                  topLeft: Radius.circular(15), topRight: Radius.circular(15)),
-              child: Image.asset(
-                news.newImg,
-                height: 150,
-                width: 200,
+                topLeft: Radius.circular(15),
+                topRight: Radius.circular(15),
+              ),
+              child: Image.network(
+                '${ApiKeys.baseUrl}${news.image}',
+                headers: ApiKeys.imageHeaders,
+                height: 155,
+                width: double.infinity,
                 fit: BoxFit.cover,
               ),
             ),
-          ]),
-          Padding(
-            padding: const EdgeInsets.only(top: 5.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Text(
-                  news.title,
-                  style: const TextStyle(
-                    color: Color.fromARGB(255, 60, 60, 60),
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600,
-                  ),
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                ),
-                const SizedBox(height: 5),
-                Row(
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.all(12),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Icon(
-                      Icons.calendar_month,
-                      color: Color.fromARGB(255, 184, 184, 184),
-                      size: 16,
-                    ),
-                    const SizedBox(
-                      width: 6,
-                    ),
                     Text(
-                      news.date,
-                      style: TextStyle(
-                          fontSize: 10, color: Colors.black.withOpacity(0.5)),
-                    )
+                      news.title,
+                      style: const TextStyle(
+                        color: Colors.black,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w600,
+                      ),
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                    const SizedBox(height: 8),
+                    Row(
+                      children: [
+                        const Icon(
+                          Icons.calendar_month,
+                          color: Color(0xFF393939),
+                          size: 16,
+                        ),
+                        const SizedBox(width: 4),
+                        Text(
+                          news.date.split(' ')[0],
+                          style: const TextStyle(
+                            color: Color(0xFF393939),
+                            fontSize: 12,
+                          ),
+                        ),
+                      ],
+                    ),
                   ],
                 ),
-              ],
+              ),
             ),
-          )
-        ],
+          ],
+        ),
       ),
     );
   }

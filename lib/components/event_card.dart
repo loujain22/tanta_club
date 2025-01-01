@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:tanta_club/models/event.dart';
-import 'package:tanta_club/utils/helpers/helper_functions.dart';
+import '../models/events_model.dart';
+import '../utils/helpers/helper_functions.dart';
+import '../utils/keys.dart';
 
 class EventsCard extends StatelessWidget {
   const EventsCard({super.key, required this.events});
 
-  final Event events;
+  final EventsModel events;
 
   @override
   Widget build(BuildContext context) {
@@ -21,11 +22,20 @@ class EventsCard extends StatelessWidget {
             ClipRRect(
               borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(15), topRight: Radius.circular(15)),
-              child: Image.asset(
-                events.img,
+              child: Image.network(
+                '${ApiKeys.baseUrl}${events.image}',
                 height: 150,
                 width: double.infinity,
                 fit: BoxFit.cover,
+                errorBuilder: (context, error, stackTrace) {
+                  return Container(
+                    height: 150,
+                    color: Colors.grey[300],
+                    child: const Center(
+                      child: Icon(Icons.error),
+                    ),
+                  );
+                },
               ),
             ),
             Container(
@@ -59,6 +69,7 @@ class EventsCard extends StatelessWidget {
             padding: const EdgeInsets.all(20.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
                   children: [
@@ -67,15 +78,18 @@ class EventsCard extends StatelessWidget {
                       color: Colors.amber,
                       size: 20,
                     ),
-                    const SizedBox(
-                      width: 6,
-                    ),
-                    Text(
-                      events.place,
-                      style: Theme.of(context).textTheme.bodySmall,
+                    const SizedBox(width: 6),
+                    Expanded(
+                      child: Text(
+                        events.place,
+                        style: Theme.of(context).textTheme.bodySmall,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                      ),
                     )
                   ],
                 ),
+                const SizedBox(height: 4),
                 Row(
                   children: [
                     const Icon(
@@ -83,12 +97,14 @@ class EventsCard extends StatelessWidget {
                       color: Colors.amber,
                       size: 20,
                     ),
-                    const SizedBox(
-                      width: 6,
-                    ),
-                    Text(
-                      events.date,
-                      style: Theme.of(context).textTheme.bodySmall,
+                    const SizedBox(width: 6),
+                    Expanded(
+                      child: Text(
+                        events.date,
+                        style: Theme.of(context).textTheme.bodySmall,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                      ),
                     )
                   ],
                 ),
