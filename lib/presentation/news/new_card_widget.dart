@@ -1,137 +1,105 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:tanta_club/models/news.dart';
 import 'package:tanta_club/models/news_model.dart';
+import 'package:tanta_club/presentation/news/news_details.dart';
 import 'package:tanta_club/utils/helpers/helper_functions.dart';
 import 'package:tanta_club/utils/keys.dart';
-import 'package:intl/intl.dart';
 
 class NewsCardWidget extends StatelessWidget {
-  const NewsCardWidget({
-    super.key,
-    required this.news,
-    this.onTap,
-  });
+  const NewsCardWidget({super.key, required this.news});
 
   final NewsModel news;
-  final VoidCallback? onTap;
-
-  String _formatDate(String dateString) {
-    try {
-      final date = DateTime.parse(dateString);
-      return DateFormat.yMMMd().format(date);
-    } catch (e) {
-      debugPrint('Error parsing date: $e');
-      return dateString;
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
-    return Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      elevation: 7,
-      margin: const EdgeInsets.all(10),
-      child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(15),
-          color: Colors.white,
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            ClipRRect(
-              borderRadius: const BorderRadius.only(
-                topLeft: Radius.circular(15),
-                topRight: Radius.circular(15),
+    return InkWell(
+      onTap: () {
+        final newsDetails = News(
+          id: 0,
+          title: news.subject,
+          date: news.dataTime,
+          newImg: '${ApiKeys.baseUrl}${news.eventImage}',
+          description: news.description,
+        );
+        Get.to(() => NewsDetailsScreen(news: newsDetails));
+      },
+      child: SizedBox(
+        height: 315,
+        width: double.infinity,
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          elevation: 7,
+          margin: const EdgeInsets.all(10),
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(top: 15, left: 10, right: 10),
+                child: ClipRRect(
+                  borderRadius: const BorderRadius.only(
+                    topLeft: Radius.circular(10),
+                    topRight: Radius.circular(10),
+                    bottomLeft: Radius.circular(10),
+                    bottomRight: Radius.circular(10),
+                  ),
+                  child: Image.network(
+                    '${ApiKeys.baseUrl}${news.eventImage}',
+                    headers: ApiKeys.getAuthImageHeaders(context),
+                    height: 220,
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                    errorBuilder: (context, error, stackTrace) {
+                      return Container(
+                        height: 220,
+                        width: double.infinity,
+                        color: Colors.grey[300],
+                        child: const Center(
+                          child: Icon(Icons.error),
+                        ),
+                      );
+                    },
+                  ),
+                ),
               ),
-              child: Image.network(
-                '${ApiKeys.baseUrl}${news.image}',
-                headers: ApiKeys.imageHeaders,
-                height: 155,
-                width: double.infinity,
-                fit: BoxFit.cover,
-                errorBuilder: (context, error, stackTrace) {
-                  debugPrint('Error loading image: $error');
-                  return Container(
-                    height: 155,
-                    color: Colors.grey[300],
-                    child: const Center(
-                      child: Icon(
-                        Icons.error_outline,
-                        size: 40,
-                        color: Colors.grey,
-                      ),
-                    ),
-                  );
-                },
-              ),
-            ),
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.all(12),
+              const SizedBox(height: 5),
+              Padding(
+                padding: EdgeInsets.only(
+                    left: isArabic() ? 0 : 15, right: isArabic() ? 15 : 0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      news.title,
+                      news.subject,
                       style: const TextStyle(
-                        color: Colors.black,
-                        fontSize: 14,
+                        color: Color.fromARGB(255, 60, 60, 60),
+                        fontSize: 16,
                         fontWeight: FontWeight.w600,
                       ),
-                      maxLines: 2,
+                      maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                     ),
-                    const SizedBox(height: 8),
-                    Text(
-                      news.description,
-                      style: TextStyle(
-                        color: Colors.grey[600],
-                        fontSize: 12,
-                      ),
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                    const Spacer(),
+                    const SizedBox(height: 5),
                     Row(
                       children: [
                         const Icon(
                           Icons.calendar_month,
-                          color: Color(0xFF393939),
+                          color: Colors.black,
                           size: 16,
                         ),
-                        const SizedBox(width: 4),
-                        Text(
-                          _formatDate(news.date.split(' ')[0]),
-                          style: const TextStyle(
-                            color: Color(0xFF393939),
-                            fontSize: 12,
-                          ),
+                        const SizedBox(
+                          width: 6,
                         ),
-                        const Spacer(),
-                        TextButton(
-                          onPressed: onTap,
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Text(isArabic() ? 'اقرأ المزيد' : 'Read More'),
-                              Icon(
-                                isArabic()
-                                    ? Icons.arrow_left
-                                    : Icons.arrow_right,
-                                size: 16,
-                              ),
-                            ],
-                          ),
-                        ),
+                        Text(news.dataTime,
+                            style: const TextStyle(
+                                fontSize: 10, color: Colors.black)),
                       ],
                     ),
                   ],
                 ),
-              ),
-            ),
-          ],
+              )
+            ],
+          ),
         ),
       ),
     );

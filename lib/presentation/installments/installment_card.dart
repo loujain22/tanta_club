@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_check_box_rounded/flutter_check_box_rounded.dart';
-import 'package:tanta_club/generated/l10n.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:tanta_club/presentation/installments/installment_modal_sheet.dart';
 import 'package:tanta_club/style/colors.dart';
 
@@ -38,7 +38,7 @@ class InstallmentCard extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      S.of(context)!.itemName,
+                      AppLocalizations.of(context)!.itemName,
                       style: const TextStyle(
                           color: Colors.black, fontWeight: FontWeight.w600),
                     ),
@@ -55,7 +55,7 @@ class InstallmentCard extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      S.of(context)!.dateOfFirstInstallment,
+                      AppLocalizations.of(context)!.dateOfFirstInstallment,
                       style: const TextStyle(
                           color: Colors.black, fontWeight: FontWeight.w600),
                     ),
@@ -72,7 +72,7 @@ class InstallmentCard extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      S.of(context)!.remainingAmount,
+                      AppLocalizations.of(context)!.remainingAmount,
                       style: const TextStyle(
                           color: Colors.black, fontWeight: FontWeight.w600),
                     ),
@@ -89,7 +89,7 @@ class InstallmentCard extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      S.of(context)!.installment,
+                      AppLocalizations.of(context)!.installment,
                       style: const TextStyle(
                           color: Colors.black, fontWeight: FontWeight.w600),
                     ),
@@ -106,7 +106,7 @@ class InstallmentCard extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      S.of(context)!.total,
+                      AppLocalizations.of(context)!.total,
                       style: const TextStyle(
                           color: Colors.black, fontWeight: FontWeight.w600),
                     ),

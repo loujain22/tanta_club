@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:tanta_club/generated/l10n.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:tanta_club/presentation/installments/installments.dart';
+import 'package:tanta_club/presentation/user-profile/qr_code_dialog.dart';
 import 'package:tanta_club/presentation/user-profile/user_profile_header.dart';
 import 'package:tanta_club/presentation/user-profile/user_profile_image.dart';
 import 'package:tanta_club/presentation/user-profile/user_profile_items.dart';
 import 'package:tanta_club/presentation/change_password.dart';
+import 'package:tanta_club/presentation/Invoices/invoices.dart';
 import 'package:tanta_club/utils/helpers/helper_functions.dart';
+import 'package:provider/provider.dart';
+import 'package:tanta_club/providers/user_provider.dart';
+import 'package:tanta_club/providers/auth_provider.dart';
 
 class UserProfileScreen extends StatelessWidget {
   const UserProfileScreen({super.key});
@@ -13,6 +19,9 @@ class UserProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final currentLocale = Localizations.localeOf(context);
+    final isEnglish = currentLocale.languageCode == 'en';
+
     return Scaffold(
       body: Stack(
         children: [
@@ -35,15 +44,17 @@ class UserProfileScreen extends StatelessWidget {
                 children: [
                   // -- Member Id
                   UserProfileItem(
-                      title: isArabic() ? "رقم العضوية" : "Member Id",
+                      title: AppLocalizations.of(context)!.memberId,
                       itemIcon: "assets/icons/member-id.png"),
                   Padding(
                     padding: EdgeInsets.only(
                         right: isArabic() ? 45 : 0, left: isArabic() ? 0 : 45),
-                    child: const Text(
-                      "2024/10133",
-                      style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
+                    child: Consumer<UserProvider>(
+                      builder: (context, userProvider, _) => Text(
+                        userProvider.user?.membershipId ?? "",
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.w700),
+                      ),
                     ),
                   ),
                   const Divider(
@@ -52,17 +63,17 @@ class UserProfileScreen extends StatelessWidget {
 
                   // -- Number of Affiliate Members
                   UserProfileItem(
-                      title: isArabic()
-                          ? "عدد الأعضاء التابعين"
-                          : "Number of  affiliate members",
+                      title: AppLocalizations.of(context)!.affiliateMembers,
                       itemIcon: "assets/icons/affiliated-members.png"),
                   Padding(
                     padding: EdgeInsets.only(
                         right: isArabic() ? 45 : 0, left: isArabic() ? 0 : 45),
-                    child: const Text(
-                      "3",
-                      style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
+                    child: Consumer<UserProvider>(
+                      builder: (context, userProvider, _) => Text(
+                        userProvider.user?.numberOfKins.toString() ?? "0",
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.w700),
+                      ),
                     ),
                   ),
                   const Divider(
@@ -70,18 +81,24 @@ class UserProfileScreen extends StatelessWidget {
                   ),
 
                   // -- Invoices
-                  UserProfileItem(
-                      title: isArabic() ? "الفواتير" : "Invoices",
-                      itemIcon: "assets/icons/invoices.png"),
+                  InkWell(
+                    onTap: () => Get.to(() => const InvoicesScreen()),
+                    child: UserProfileItem(
+                        title: AppLocalizations.of(context)!.invoices,
+                        itemIcon: "assets/icons/invoices.png"),
+                  ),
                   const SizedBox(height: 5),
                   const Divider(
                     color: Color.fromARGB(255, 190, 190, 190),
                   ),
 
                   // -- Installments
-                  UserProfileItem(
-                      title: isArabic() ? "الأقساط" : "Installments",
-                      itemIcon: "assets/icons/installments.png"),
+                  InkWell(
+                    onTap: () => Get.to(() => const InstallmentsScreen()),
+                    child: UserProfileItem(
+                        title: AppLocalizations.of(context)!.installments,
+                        itemIcon: "assets/icons/installments.png"),
+                  ),
                   const SizedBox(height: 5),
                   const Divider(
                     color: Color.fromARGB(255, 190, 190, 190),
@@ -91,9 +108,7 @@ class UserProfileScreen extends StatelessWidget {
                   InkWell(
                     onTap: () => Get.to(() => const ChangePasswordScreen()),
                     child: UserProfileItem(
-                        title: isArabic()
-                            ? "تغيير كلمة المرور"
-                            : "Change Password",
+                        title: AppLocalizations.of(context)!.changePassword,
                         itemIcon: "assets/icons/change-password.png"),
                   ),
                   const SizedBox(height: 5),
@@ -101,9 +116,22 @@ class UserProfileScreen extends StatelessWidget {
                     color: Color.fromARGB(255, 190, 190, 190),
                   ),
 
-                  // -- Barcode
-                  const UserProfileItem(
-                      title: "QR Code", itemIcon: "assets/icons/QR.png"),
+                  // -- QR Code
+                  UserProfileItem(
+                    title: "QR Code",
+                    itemIcon: "assets/icons/QR.png",
+                    onTap: () {
+                      final memberId =
+                          context.read<UserProvider>().user?.membershipId;
+                      if (memberId != null) {
+                        showDialog(
+                          context: context,
+                          builder: (context) =>
+                              QRCodeDialog(memberId: memberId),
+                        );
+                      }
+                    },
+                  ),
                   const SizedBox(height: 5),
                   const Divider(
                     color: Color.fromARGB(255, 190, 190, 190),
@@ -112,11 +140,16 @@ class UserProfileScreen extends StatelessWidget {
                   // -- Languages
                   InkWell(
                     onTap: () {
-                      print("Arabic Lang");
-                      // widget.onLocaleChange(const Locale('en'));
+                      if (isEnglish) {
+                        Get.updateLocale(const Locale('ar'));
+                      } else {
+                        Get.updateLocale(const Locale('en'));
+                      }
                     },
                     child: UserProfileItem(
-                        title: isArabic() ? "العربية" : "Arabic",
+                        title: isEnglish
+                            ? AppLocalizations.of(context)!.arabic
+                            : AppLocalizations.of(context)!.english,
                         itemIcon: "assets/icons/languages.png"),
                   ),
                   const SizedBox(height: 5),
@@ -125,17 +158,24 @@ class UserProfileScreen extends StatelessWidget {
                   ),
 
                   // -- Logout
-                  Padding(
-                    padding: EdgeInsets.only(
-                        left: isArabic() ? 0 : 10, right: isArabic() ? 5 : 0),
-                    child: Row(
-                      children: [
-                        Image.asset("assets/icons/logout.png",
-                            height: 20, width: 20),
-                        const SizedBox(width: 20),
-                        Text(S.of(context)!.logout,
-                            style: const TextStyle(fontSize: 16))
-                      ],
+                  GestureDetector(
+                    onTap: () async {
+                      final authProvider =
+                          Provider.of<AuthProvider>(context, listen: false);
+                      await authProvider.logout();
+                    },
+                    child: Padding(
+                      padding: EdgeInsets.only(
+                          left: isArabic() ? 0 : 10, right: isArabic() ? 5 : 0),
+                      child: Row(
+                        children: [
+                          Image.asset("assets/icons/logout.png",
+                              height: 20, width: 20),
+                          const SizedBox(width: 20),
+                          Text(AppLocalizations.of(context)!.logout,
+                              style: const TextStyle(fontSize: 16))
+                        ],
+                      ),
                     ),
                   ),
                 ],

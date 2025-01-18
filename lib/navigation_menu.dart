@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
-import 'package:tanta_club/generated/l10n.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:tanta_club/presentation/events/events.dart';
 import 'package:tanta_club/presentation/home/home.dart';
 import 'package:tanta_club/presentation/news/news.dart';
@@ -25,15 +25,15 @@ class NavigationMenu extends StatelessWidget {
               indicatorColor: TColors.primary,
               destinations: [
                 NavigationDestination(
-                    icon: const Icon(Iconsax.home), label: S.of(context)!.home),
+                    icon: const Icon(Iconsax.home), label: AppLocalizations.of(context)!.home),
                 NavigationDestination(
                     icon: const Icon(Iconsax.calendar),
-                    label: S.of(context)!.events),
+                    label: AppLocalizations.of(context)!.events),
                 NavigationDestination(
                     icon: const Icon(Icons.newspaper),
-                    label: S.of(context)!.news),
+                    label: AppLocalizations.of(context)!.news),
                 NavigationDestination(
-                    icon: const Icon(Iconsax.user), label: S.of(context)!.you),
+                    icon: const Icon(Iconsax.user), label: AppLocalizations.of(context)!.you),
               ])),
       body: Obx(() => controller.screens[controller.selectedIndex.value]),
     );

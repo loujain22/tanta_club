@@ -3,32 +3,24 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:tanta_club/components/messages/messages.dart';
 import 'package:tanta_club/components/messages/messages_widget.dart';
-import 'package:tanta_club/generated/intl/messages_ar.dart';
-import 'package:tanta_club/generated/l10n.dart';
-import 'package:tanta_club/presentation/Invoices/invoices.dart';
-import 'package:tanta_club/presentation/change_password.dart';
-import 'package:tanta_club/presentation/installments/installments.dart';
+import 'package:tanta_club/navigation_menu.dart';
 import 'package:tanta_club/presentation/login.dart';
-import 'package:tanta_club/presentation/payment-methods/payment_methods.dart';
-import 'package:tanta_club/presentation/user-profile/user_profile.dart';
+import 'package:tanta_club/providers/auth_provider.dart';
 import 'package:tanta_club/utils/theme/custom_themes/theme.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
 
-class App extends StatefulWidget {
+class App extends StatelessWidget {
   const App({super.key});
 
-  @override
-  State<App> createState() => _AppState();
-}
-
-class _AppState extends State<App> {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       locale: const Locale('en'),
-      supportedLocales: S.delegate.supportedLocales,
+      supportedLocales: AppLocalizations.supportedLocales,
       localizationsDelegates: const [
-        S.delegate,
+        AppLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
@@ -39,7 +31,11 @@ class _AppState extends State<App> {
           child: child ?? const SizedBox(),
         );
       },
-      home: const LoginScreen(),
+      home: Consumer<AuthProvider>(
+        builder: (context, auth, _) {
+          return auth.isAuth ? const NavigationMenu() : const LoginScreen();
+        },
+      ),
     );
   }
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:tanta_club/generated/l10n.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:tanta_club/presentation/installments/installment_card.dart';
 import 'package:tanta_club/presentation/payment-methods/payment_methods.dart';
 import 'package:tanta_club/utils/helpers/helper_functions.dart';
@@ -19,11 +19,11 @@ class InstallmentsScreen extends StatelessWidget {
           margin: const EdgeInsets.all(10),
           child: ElevatedButton(
               onPressed: () => Get.to(() => const PaymentMethodsScreen()),
-              child: Text(S.of(context)!.payment,
+              child: Text(AppLocalizations.of(context)!.payment,
                   style: TTextTheme.textTheme.titleLarge)),
         ),
         appBar: AppBar(
-          title: Text(S.of(context)!.installments),
+          title: Text(AppLocalizations.of(context)!.installments),
           centerTitle: true,
           leading: IconButton.outlined(
               style: OutlinedButton.styleFrom(
@@ -48,10 +48,10 @@ class InstallmentsScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  S.of(context)!.installmentSubtitle1,
+                  AppLocalizations.of(context)!.installmentSubtitle1,
                   style: const TextStyle(fontSize: 18),
                 ),
-                Text(S.of(context)!.installmentSubtitle2,
+                Text(AppLocalizations.of(context)!.installmentSubtitle2,
                     style: const TextStyle(fontSize: 18))
               ],
             ),

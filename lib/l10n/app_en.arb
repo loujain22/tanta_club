@@ -33,10 +33,12 @@
    "card": "Card",
    "fawry": "Fawry",
    "invoices": "Invoices",
+   "noInvoices": "No invoices found",
    "invoiceSubtitle1": "Please select the invoice(s) ",
    "invoiceSubtitle2": "you'd like to pay.",
    "remainingAmount": "Remaining Amount",
    "invoiceId": "Invoice Id",
+   "invoiceNumber": "Invoice Number",
    "invoiceType": "Invoice Type",
    "installmentSubtitle1": "Please select the installment(s)",
    "installmentSubtitle2": "you'd like to pay.",
@@ -46,6 +48,8 @@
    "installment": "Installment:",
    "dInstallment": "Installments",
    "total": "Total:",
+   "phoneNumber": "Phone Number",
+   "pleaseEnterPhoneNumber": "Please enter phone number.",
    "pleaseEnterUsername": "Please enter username.",
    "pleaseEnterPassword": "Please enter password.",
    "pleaseEnterInstallment": "Please enter installment.",
@@ -53,5 +57,32 @@
    "tryAgain": "Try Again",
    "noNewsAvailable": "No News Available",
    "noEventsFound": "No events available",
-   "readMore": "Read More"
+   "readMore": "Read More",
+   "description": "Description",
+   "eventLocation": "Location",
+   "memberId": "Member ID",
+   "affiliateMembers": "Number of affiliate members",
+   "changePassword": "Change Password",
+   "arabic": "Arabic",
+   "english": "English",
+   "place": "Place",
+   "date": "Date",
+   "eventDetails": "Event Details",
+   "newsDetails": "News Details",
+   "paymentLaunchError": "Could not launch payment page",
+   "paymentVerificationError": "Failed to verify payment status",
+   "paymentVerificationFailed": "Payment verification failed",
+   "@paymentSuccessful": {
+     "placeholders": {
+       "amount": {
+         "type": "double",
+         "format": "currency"
+       }
+     }
+   },
+   "paymentSuccessful": "Payment successful! Amount paid: ${amount}",
+   "selectInvoicesToPay": "Please select at least one invoice to pay",
+   "noAccount": "Don't have a user?",
+   "createOne": "Create one",
+   "sendOtp": "Send OTP"
 }

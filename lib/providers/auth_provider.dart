@@ -1,9 +1,11 @@
 import 'dart:convert';
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:http/http.dart' as http;
 import '../helpers/keys.dart';
+import 'user_provider.dart';
 
 class AuthProvider with ChangeNotifier {
   String? _token;
@@ -28,7 +30,8 @@ class AuthProvider with ChangeNotifier {
   String? get userId => _userId;
   String? get userName => _userName;
 
-  Future<bool> login(String email, String password) async {
+  Future<bool> login(
+      String email, String password, BuildContext context) async {
     try {
       final url = Uri.parse(BaseUrl.login);
       debugPrint('Attempting login for user: $email');
@@ -36,52 +39,72 @@ class AuthProvider with ChangeNotifier {
       final requestBody = {
         'usr': email,
         'pwd': password,
-        'mobile': true,
-        'serial': '9e1093961f8ef891'
+        'phone': email,
       };
 
       final response = await http.post(
         url,
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': 'token ${ApiKeys.authToken}'
-        },
+        headers: ApiKeys.loginHeaders,
         body: json.encode(requestBody),
       );
 
-      final responseData = json.decode(response.body);
       debugPrint('Login response status: ${response.statusCode}');
-      
+      debugPrint('Raw response body: ${response.body}');
+
+      final responseData = json.decode(response.body);
+      debugPrint('Decoded response data: $responseData');
+
       if (responseData['exception'] != null) {
-        final errorMessage = responseData['exception'].toString().split(':').last.trim();
+        final errorMessage =
+            responseData['exception'].toString().split(':').last.trim();
         debugPrint('Login failed with exception: $errorMessage');
         throw Exception(errorMessage);
       }
-      
+
       if (response.statusCode != 200) {
         final error = responseData['message'] ?? 'Authentication failed';
         debugPrint('Login failed: $error');
         throw Exception(error);
       }
 
-      _token = responseData['token'];
-      _userId = responseData['userId'];
-      _userName = responseData['userName'];
-      _expiryDate = DateTime.now().add(const Duration(hours: 24));
+      // Extract token from the correct response structure
+      debugPrint('Checking message field: ${responseData['message']}');
+      if (responseData['message'] != null) {
+        final messageData = responseData['message'];
+        debugPrint('Message data: $messageData');
 
-      final prefs = await SharedPreferences.getInstance();
-      final userData = json.encode({
-        'token': _token,
-        'userId': _userId,
-        'userName': _userName,
-        'expiryDate': _expiryDate!.toIso8601String(),
-      });
-      await prefs.setString('userData', userData);
-      debugPrint('Login successful for user: $_userName');
+        // Combine api_key and api_secret for the token
+        _token = '${messageData['api_key']}:${messageData['api_secret']}';
+        _userId = messageData['user'];
+        _userName = messageData['user']
+            .toString()
+            .split('@')[0]; // Extract username part
+        _expiryDate = DateTime.now().add(const Duration(hours: 24));
 
-      _autoLogout();
-      notifyListeners();
-      return true;
+        debugPrint('Token set to: $_token');
+        debugPrint('UserId set to: $_userId');
+        debugPrint('UserName set to: $_userName');
+
+        final prefs = await SharedPreferences.getInstance();
+        final userData = json.encode({
+          'token': _token,
+          'userId': _userId,
+          'userName': _userName,
+          'expiryDate': _expiryDate!.toIso8601String(),
+        });
+        await prefs.setString('userData', userData);
+        debugPrint('Login successful for user: $_userName');
+
+        // Fetch user info after successful login
+        await Provider.of<UserProvider>(context, listen: false)
+            .fetchUserInfo(context);
+
+        _autoLogout();
+        notifyListeners();
+        return true;
+      } else {
+        throw Exception('Invalid response format');
+      }
     } catch (error) {
       debugPrint('Login error: $error');
       rethrow;
@@ -101,7 +124,6 @@ class AuthProvider with ChangeNotifier {
 
       if (expiryDate.isBefore(DateTime.now())) {
         debugPrint('Stored token has expired');
-        await logout();
         return false;
       }
 
@@ -110,7 +132,6 @@ class AuthProvider with ChangeNotifier {
       _userName = extractedUserData['userName'];
       _expiryDate = expiryDate;
 
-      debugPrint('Auto login successful for user: $_userName');
       notifyListeners();
       _autoLogout();
       return true;
@@ -121,7 +142,6 @@ class AuthProvider with ChangeNotifier {
   }
 
   Future<void> logout() async {
-    debugPrint('Logging out user: $_userName');
     _token = null;
     _userId = null;
     _userName = null;
@@ -130,11 +150,9 @@ class AuthProvider with ChangeNotifier {
       _authTimer!.cancel();
       _authTimer = null;
     }
-
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.remove('userData');
-    debugPrint('User logged out successfully');
     notifyListeners();
+    final prefs = await SharedPreferences.getInstance();
+    prefs.clear();
   }
 
   void _autoLogout() {
@@ -143,6 +161,5 @@ class AuthProvider with ChangeNotifier {
     }
     final timeToExpiry = _expiryDate!.difference(DateTime.now()).inSeconds;
     _authTimer = Timer(Duration(seconds: timeToExpiry), logout);
-    debugPrint('Auto logout scheduled in $timeToExpiry seconds');
   }
 }

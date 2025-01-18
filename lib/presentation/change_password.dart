@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
-import 'package:tanta_club/generated/l10n.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:tanta_club/utils/helpers/helper_functions.dart';
 import 'package:tanta_club/utils/theme/custom_themes/text_theme.dart';
 
@@ -27,7 +27,7 @@ class ChangePasswordScreen extends StatelessWidget {
                       },
                       icon: const Icon(Icons.arrow_back)),
                   const SizedBox(width: 40),
-                  Text(S.of(context)!.createNewPassword,
+                  Text(AppLocalizations.of(context)!.createNewPassword,
                       style: TTextTheme.textTheme.titleLarge)
                 ],
               ),
@@ -45,9 +45,9 @@ class ChangePasswordScreen extends StatelessWidget {
           // --  Description
           Column(
             children: [
-              Text(S.of(context)!.yourNewPasswordMustBeDifferent,
+              Text(AppLocalizations.of(context)!.yourNewPasswordMustBeDifferent,
                   style: TTextTheme.textTheme.titleMedium),
-              Text(S.of(context)!.fromPreviouslyUsedPassword,
+              Text(AppLocalizations.of(context)!.fromPreviouslyUsedPassword,
                   style: TTextTheme.textTheme.titleMedium)
             ],
           ),
@@ -63,7 +63,7 @@ class ChangePasswordScreen extends StatelessWidget {
                 TextFormField(
                   decoration: InputDecoration(
                       prefixIcon: const Icon(Iconsax.password_check),
-                      labelText: S.of(context)!.oldPassword),
+                      labelText: AppLocalizations.of(context)!.oldPassword),
                 ),
 
                 const SizedBox(height: 15),
@@ -73,7 +73,7 @@ class ChangePasswordScreen extends StatelessWidget {
                   decoration: InputDecoration(
                       prefixIcon: const Icon(Iconsax.password_check),
                       suffixIcon: const Icon(Iconsax.eye_slash),
-                      labelText: S.of(context)!.newPassword),
+                      labelText: AppLocalizations.of(context)!.newPassword),
                 ),
 
                 const SizedBox(height: 15),
@@ -83,7 +83,7 @@ class ChangePasswordScreen extends StatelessWidget {
                   decoration: InputDecoration(
                       prefixIcon: const Icon(Iconsax.password_check),
                       suffixIcon: const Icon(Iconsax.eye_slash),
-                      labelText: S.of(context)!.confirmNewPassword),
+                      labelText: AppLocalizations.of(context)!.confirmNewPassword),
                 ),
 
                 const SizedBox(height: 25),
@@ -93,7 +93,7 @@ class ChangePasswordScreen extends StatelessWidget {
                   width: double.infinity,
                   child: ElevatedButton(
                       onPressed: () {},
-                      child: Text(S.of(context)!.save,
+                      child: Text(AppLocalizations.of(context)!.save,
                           style: TTextTheme.textTheme.titleLarge)),
                 )
               ],

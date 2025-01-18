@@ -1,13 +1,29 @@
 import 'package:flutter/material.dart';
-import 'package:tanta_club/data/events_data.dart';
-import 'package:tanta_club/generated/l10n.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:get/get.dart';
+import 'package:provider/provider.dart';
 import 'package:tanta_club/presentation/events/big_event.dart';
 import 'package:tanta_club/presentation/events/small_event.dart';
+import 'package:tanta_club/providers/events_provider.dart';
 import 'package:tanta_club/utils/helpers/helper_functions.dart';
 import 'package:tanta_club/utils/theme/custom_themes/text_theme.dart';
 
-class EventsScreen extends StatelessWidget {
+import '../../navigation_menu.dart';
+
+class EventsScreen extends StatefulWidget {
   const EventsScreen({super.key});
+
+  @override
+  State<EventsScreen> createState() => _EventsScreenState();
+}
+
+class _EventsScreenState extends State<EventsScreen> {
+  @override
+  void initState() {
+    super.initState();
+    Future.microtask(() => Provider.of<EventsProvider>(context, listen: false)
+        .fetchEvents(context));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -30,30 +46,51 @@ class EventsScreen extends StatelessWidget {
                     side: const BorderSide(
                         width: 1.0, color: Color.fromARGB(255, 7, 7, 7)),
                   ),
-                  onPressed: () {},
+                  onPressed: () =>
+                      Get.find<NavigationController>().selectedIndex.value = 0,
                   icon: const Icon(Icons.arrow_back)),
               const SizedBox(width: 110),
-              Text(S.of(context)!.events,
+              Text(AppLocalizations.of(context)!.events,
                   style: TTextTheme.textTheme.titleLarge),
             ],
           ),
         ),
 
-        const Padding(
-          padding: EdgeInsets.only(top: 110, left: 10, right: 10),
-          child: BigEventWidget(),
-        ),
+        Consumer<EventsProvider>(
+          builder: (context, eventsProvider, child) {
+            if (eventsProvider.isLoading) {
+              return const Center(child: CircularProgressIndicator());
+            }
 
-        Padding(
-          padding: const EdgeInsets.only(top: 390),
-          child: ListView.builder(
-              scrollDirection: Axis.vertical,
-              shrinkWrap: true,
-              itemCount: eventsData.length,
-              itemBuilder: (context, index) => SmallEvent(
-                    event: eventsData[index],
-                    // indexitem: index,
-                  )),
+            if (eventsProvider.error.isNotEmpty) {
+              return Center(child: Text(eventsProvider.error));
+            }
+
+            final featuredEvent = eventsProvider.featuredEvent;
+            final regularEvents = eventsProvider.regularEvents;
+
+            return Stack(
+              children: [
+                if (featuredEvent != null)
+                  Padding(
+                    padding:
+                        const EdgeInsets.only(top: 110, left: 10, right: 10),
+                    child: BigEventWidget(event: featuredEvent),
+                  ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 390),
+                  child: ListView.builder(
+                    scrollDirection: Axis.vertical,
+                    shrinkWrap: true,
+                    itemCount: regularEvents.length,
+                    itemBuilder: (context, index) => SmallEvent(
+                      event: regularEvents[index],
+                    ),
+                  ),
+                ),
+              ],
+            );
+          },
         ),
       ],
     ));

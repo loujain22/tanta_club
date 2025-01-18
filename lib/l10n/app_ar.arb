@@ -3,6 +3,8 @@
    "loginSubTitle" : "الرجاء تسجيل الدخول للمتابعة",
    "Username" : "إسم المستخدم",
    "Password" : "كلمة المرور",
+   "password" : "كلمة المرور",
+
    "Signin" : "تسجيل الدخول",
    "oldPassword" : "كلمة المرور السابقة",
    "newPassword" : "كلمة المرور الجديدة",
@@ -31,10 +33,12 @@
    "card" : "بطاقة إئتمانية أو فيزا",
    "fawry" : "فوري",
    "invoices" : "الفواتير",
+   "noInvoices" : "لا توجد فواتير",
    "invoiceSubtitle1" : "الرجاء تحديد الفاتورة (الفواتير) ",
    "invoiceSubtitle2" : "التي ترغب في دفعها.",
    "remainingAmount" : "المبلغ المتبقي:",
    "invoiceId" : "رقم الفاتورة:",
+   "invoiceNumber" : "رقم الفاتورة:",
    "invoiceType" :"نوع الفاتورة:",
    "installmentSubtitle1" : "الرجاء تحديد القسط (الأقساط)",
    "installmentSubtitle2" : "التي ترغب في دفعها.",
@@ -57,5 +61,34 @@
    "tryAgain": "حاول مرة أخرى",
    "noNewsAvailable": "لا توجد أخبار متاحة",
    "noEventsFound": "لا توجد فعاليات متاحة",
-   "readMore": "اقرأ المزيد"
+   "readMore": "اقرأ المزيد",
+   "description": "الوصف",
+   "eventLocation": "المكان",
+   "memberId": "رقم العضوية",
+   "affiliateMembers": "عدد الأعضاء التابعين",
+   "changePassword": "تغيير كلمة المرور",
+   "arabic": "العربية",
+   "english": "الإنجليزية",
+   "phoneNumber": "رقم الهاتف",
+   "pleaseEnterPhoneNumber": "الرجاء إدخال رقم الهاتف.",
+   "place": "المكان",
+   "date": "التاريخ",
+   "eventDetails": "تفاصيل الفعالية",
+   "newsDetails": "تفاصيل الخبر",
+   "paymentLaunchError": "تعذر فتح صفحة الدفع",
+   "paymentVerificationError": "فشل التحقق من حالة الدفع",
+   "paymentVerificationFailed": "فشل التحقق من عملية الدفع",
+   "@paymentSuccessful": {
+     "placeholders": {
+       "amount": {
+         "type": "double",
+         "format": "currency"
+       }
+     }
+   },
+   "paymentSuccessful": "تم الدفع بنجاح! المبلغ المدفوع: ${amount}",
+   "selectInvoicesToPay": "الرجاء تحديد فاتورة واحدة على الأقل للدفع",
+   "noAccount": "ليس لديك حساب؟",
+   "createOne": " سجل الان",
+   "sendOtp": "إرسال رمز التحقق"
 }
