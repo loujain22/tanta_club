@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tanta_club/providers/user_provider.dart';
 import 'package:tanta_club/style/colors.dart';
-import 'package:tanta_club/utils/helpers/helper_functions.dart';
 import 'package:tanta_club/utils/keys.dart';
 
 class UserProfileImage extends StatelessWidget {

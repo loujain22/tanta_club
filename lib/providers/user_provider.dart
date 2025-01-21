@@ -77,7 +77,7 @@ class UserProvider with ChangeNotifier {
       _user = UserModel.fromJson({
         'message': {'data': userData}
       });
-      debugPrint('Loaded user info for: ${_user}');
+      debugPrint('Loaded user info for: $_user');
 
       notifyListeners();
       return true;

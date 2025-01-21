@@ -1,6 +1,5 @@
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
-import 'package:tanta_club/utils/helpers/helper_functions.dart';
 
 class FailureMessage extends StatelessWidget {
   const FailureMessage({super.key, required this.title, required this.message});

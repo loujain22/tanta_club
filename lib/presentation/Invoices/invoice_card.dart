@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_check_box_rounded/flutter_check_box_rounded.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:provider/provider.dart';
-import 'package:tanta_club/providers/invoice_provider.dart';
 import 'package:tanta_club/style/colors.dart';
-import 'package:tanta_club/utils/helpers/helper_functions.dart';
 
 class InvoiceCard extends StatefulWidget {
   final String remainingAmount;

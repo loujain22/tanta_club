@@ -26,7 +26,7 @@ class PaymentVerificationResult {
 
 class InvoiceProvider with ChangeNotifier {
   List<dynamic> _invoices = [];
-  Set<String> _selectedInvoices = {};
+  final Set<String> _selectedInvoices = {};
   bool _isLoading = false;
   String? _error;
 

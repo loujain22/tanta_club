@@ -211,8 +211,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           TextSpan(
                             children: [
                               TextSpan(
-                                text: AppLocalizations.of(context)!.noAccount +
-                                    " ",
+                                text: "${AppLocalizations.of(context)!.noAccount} ",
                                 style: const TextStyle(
                                     color: Colors.black, fontSize: 15),
                               ),
@@ -357,7 +356,7 @@ class _LoginScreenState extends State<LoginScreen> {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text('Create Account'),
+        title: const Text('Create Account'),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -366,10 +365,10 @@ class _LoginScreenState extends State<LoginScreen> {
               keyboardType: TextInputType.phone,
               decoration: InputDecoration(
                 labelText: AppLocalizations.of(context)!.phoneNumber,
-                prefixIcon: Icon(Iconsax.call),
+                prefixIcon: const Icon(Iconsax.call),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
                 Navigator.pop(context);
@@ -390,28 +389,28 @@ class _LoginScreenState extends State<LoginScreen> {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text('Enter OTP'),
+        title: const Text('Enter OTP'),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             TextField(
               controller: _otpController,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: 'OTP Code',
                 prefixIcon: Icon(Iconsax.password_check),
               ),
               keyboardType: TextInputType.number,
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () async {
                 await verifyOtp(
                     context, _phoneController.text, _otpController.text);
               },
-              child: Text('Verify OTP'),
               style: ElevatedButton.styleFrom(
-                minimumSize: Size(double.infinity, 50),
+                minimumSize: const Size(double.infinity, 50),
               ),
+              child: Text('Verify OTP'),
             ),
           ],
         ),

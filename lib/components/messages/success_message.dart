@@ -1,7 +1,5 @@
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
-import 'package:tanta_club/style/colors.dart';
-import 'package:tanta_club/utils/helpers/helper_functions.dart';
 
 class SuccessMessage extends StatelessWidget {
   const SuccessMessage({super.key, required this.title, required this.message});

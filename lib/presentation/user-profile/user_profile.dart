@@ -52,7 +52,7 @@ class UserProfileScreen extends StatelessWidget {
                     child: Consumer<UserProvider>(
                       builder: (context, userProvider, _) => Text(
                         userProvider.user?.membershipId ?? "",
-                        style: TextStyle(
+                        style: const TextStyle(
                             fontSize: 18, fontWeight: FontWeight.w700),
                       ),
                     ),
@@ -71,7 +71,7 @@ class UserProfileScreen extends StatelessWidget {
                     child: Consumer<UserProvider>(
                       builder: (context, userProvider, _) => Text(
                         userProvider.user?.numberOfKins.toString() ?? "0",
-                        style: TextStyle(
+                        style: const TextStyle(
                             fontSize: 18, fontWeight: FontWeight.w700),
                       ),
                     ),

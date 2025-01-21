@@ -34,6 +34,7 @@
    "fawry": "Fawry",
    "invoices": "Invoices",
    "noInvoices": "No invoices found",
+   "noInstallments":"No Installments",
    "invoiceSubtitle1": "Please select the invoice(s) ",
    "invoiceSubtitle2": "you'd like to pay.",
    "remainingAmount": "Remaining Amount",

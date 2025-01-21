@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:tanta_club/components/event_card.dart';
-import 'package:tanta_club/models/events_model.dart';
 import 'package:tanta_club/providers/events_provider.dart';
 import 'package:tanta_club/utils/helpers/helper_functions.dart';
 import 'package:tanta_club/utils/theme/custom_themes/text_theme.dart';

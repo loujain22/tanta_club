@@ -34,6 +34,7 @@
    "fawry" : "فوري",
    "invoices" : "الفواتير",
    "noInvoices" : "لا توجد فواتير",
+   "noInstallments":"No Installments",
    "invoiceSubtitle1" : "الرجاء تحديد الفاتورة (الفواتير) ",
    "invoiceSubtitle2" : "التي ترغب في دفعها.",
    "remainingAmount" : "المبلغ المتبقي:",

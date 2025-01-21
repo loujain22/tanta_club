@@ -34,7 +34,7 @@ class _InvoicesScreenState extends State<InvoicesScreen> {
         await provider.fetchInvoices(context);
       } else {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Could not launch payment page')),
+          const SnackBar(content: Text('Could not launch payment page')),
         );
       }
     }
