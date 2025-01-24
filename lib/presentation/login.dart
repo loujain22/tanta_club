@@ -211,7 +211,8 @@ class _LoginScreenState extends State<LoginScreen> {
                           TextSpan(
                             children: [
                               TextSpan(
-                                text: "${AppLocalizations.of(context)!.noAccount} ",
+                                text:
+                                    "${AppLocalizations.of(context)!.noAccount} ",
                                 style: const TextStyle(
                                     color: Colors.black, fontSize: 15),
                               ),
@@ -410,7 +411,7 @@ class _LoginScreenState extends State<LoginScreen> {
               style: ElevatedButton.styleFrom(
                 minimumSize: const Size(double.infinity, 50),
               ),
-              child: Text('Verify OTP'),
+              child: const Text('Verify OTP'),
             ),
           ],
         ),
