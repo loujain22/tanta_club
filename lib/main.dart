@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tanta_club/app.dart';
+import 'package:tanta_club/providers/installment_provider.dart';
 import 'providers/events_provider.dart';
 import 'providers/auth_provider.dart';
 import 'providers/news_provider.dart';
@@ -22,6 +23,7 @@ void main() async {
         ChangeNotifierProvider(create: (_) => SportsProvider()),
         ChangeNotifierProvider(create: (_) => NewsProvider()),
         ChangeNotifierProvider(create: (_) => InvoiceProvider()),
+        ChangeNotifierProvider(create: (_) => InstallmentProvider()),
       ],
       child: const App(),
     ),

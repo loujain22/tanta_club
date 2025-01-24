@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import '../presentation/installments/installment.dart';
-
+import '../helpers/keys.dart';
 
 class InstallmentProvider with ChangeNotifier {
   List<Installment> _installments = [];
@@ -13,7 +13,8 @@ class InstallmentProvider with ChangeNotifier {
   bool get isLoading => _isLoading;
   String? get error => _error;
 
-  Future<void> fetchInstallments() async {
+  Future<void> fetchInstallments(BuildContext context) async {
+    print("Fetching data for installments");
     _isLoading = true;
     _error = null;
     notifyListeners();
@@ -24,11 +25,7 @@ class InstallmentProvider with ChangeNotifier {
 
       final response = await http.get(
         url,
-        headers: {
-          'Authorization': 'token 60554d679fb0920:a3e2282bb421746',
-          'Cookie':
-              'full_name=Guest; sid=Guest; system_user=no; user_id=Guest; user_image='
-        },
+        headers: ApiKeys.getAuthHeaders(context),
       );
 
       if (response.statusCode == 200) {
@@ -48,6 +45,7 @@ class InstallmentProvider with ChangeNotifier {
     } catch (error) {
       _error = 'Something went wrong: $error';
     } finally {
+      print(_error);
       _isLoading = false;
       notifyListeners();
     }
