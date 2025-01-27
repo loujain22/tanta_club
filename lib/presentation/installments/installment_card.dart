@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_check_box_rounded/flutter_check_box_rounded.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:tanta_club/presentation/installments/installment.dart';
+import 'package:tanta_club/presentation/installments/installment_modal_sheet.dart';
+import 'package:tanta_club/style/colors.dart';
 
 class InstallmentCard extends StatelessWidget {
   final Installment installment;
@@ -13,12 +16,18 @@ class InstallmentCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      color: TColors.cardBackground,
       margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 8),
       child: Padding(
         padding: const EdgeInsets.all(15),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            CheckBoxRounded(
+              onTap: (bool? value) {},
+              checkedColor: TColors.primary,
+            ),
+            const SizedBox(height: 5),
             Text(
               installment.feesItemName,
               style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
@@ -44,6 +53,13 @@ class InstallmentCard extends StatelessWidget {
               AppLocalizations.of(context)!.total,
               installment.total.toString(),
             ),
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                SizedBox(width: 10),
+                InstallmentModalSheet(),
+              ],
+            )
           ],
         ),
       ),

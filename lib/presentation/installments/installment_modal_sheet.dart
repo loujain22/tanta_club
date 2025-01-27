@@ -42,22 +42,26 @@ class _InstallmentModalSheetState extends State<InstallmentModalSheet> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            AppLocalizations.of(context)!.installmentPlaceholder,
+                            AppLocalizations.of(context)!
+                                .installmentPlaceholder,
                             style: const TextStyle(fontSize: 16),
                           ),
                           const SizedBox(height: 10),
                           TextFormField(
+                            keyboardType:
+                                TextInputType.number, // Numeric keyboard
                             obscureText: false,
                             validator: (value) {
                               if (value == null || value.isEmpty) {
-                                return AppLocalizations.of(context)!.pleaseEnterInstallment;
+                                return AppLocalizations.of(context)!
+                                    .pleaseEnterInstallment;
                               }
                               return null;
                             },
                             decoration: InputDecoration(
                                 prefixIcon: const Icon(Iconsax.calendar),
-                                labelText:
-                                    AppLocalizations.of(context)!.installmentPlaceholder),
+                                labelText: AppLocalizations.of(context)!
+                                    .installmentPlaceholder),
                           ),
                           const SizedBox(height: 20),
                           const Row(
@@ -65,7 +69,7 @@ class _InstallmentModalSheetState extends State<InstallmentModalSheet> {
                             children: [
                               CancelButtonWidget(),
                               SizedBox(width: 2),
-                              AddButtonWidget(),
+                              AddButtonWidget(installmentCount: 5),
                             ],
                           ),
                         ],
