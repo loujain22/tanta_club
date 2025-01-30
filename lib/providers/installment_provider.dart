@@ -13,6 +13,10 @@ class InstallmentProvider with ChangeNotifier {
   bool get isLoading => _isLoading;
   String? get error => _error;
 
+  void test_log() {
+    print("Called from Providerrrr");
+  }
+
   Future<void> fetchInstallments(BuildContext context) async {
     print("Fetching data for installments");
     _isLoading = true;

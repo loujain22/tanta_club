@@ -4,17 +4,20 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:tanta_club/presentation/installments/add_button_widget.dart';
 import 'package:tanta_club/presentation/installments/cancel_button_widget.dart';
 import 'package:tanta_club/utils/theme/custom_themes/text_theme.dart';
+import 'package:tanta_club/providers/installment_provider.dart';
 
 class InstallmentModalSheet extends StatefulWidget {
-  const InstallmentModalSheet({
-    super.key,
-  });
+  final InstallmentProvider installmentProvider;
+
+  const InstallmentModalSheet({super.key, required this.installmentProvider});
 
   @override
   State<InstallmentModalSheet> createState() => _InstallmentModalSheetState();
 }
 
 class _InstallmentModalSheetState extends State<InstallmentModalSheet> {
+  final TextEditingController _installmentController = TextEditingController();
+
   GlobalKey<FormState> formState = GlobalKey();
   @override
   Widget build(BuildContext context) {
@@ -48,6 +51,7 @@ class _InstallmentModalSheetState extends State<InstallmentModalSheet> {
                           ),
                           const SizedBox(height: 10),
                           TextFormField(
+                            controller: _installmentController,
                             keyboardType:
                                 TextInputType.number, // Numeric keyboard
                             obscureText: false,
@@ -64,12 +68,17 @@ class _InstallmentModalSheetState extends State<InstallmentModalSheet> {
                                     .installmentPlaceholder),
                           ),
                           const SizedBox(height: 20),
-                          const Row(
+                          Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              CancelButtonWidget(),
-                              SizedBox(width: 2),
-                              AddButtonWidget(installmentCount: 5),
+                              const CancelButtonWidget(),
+                              const SizedBox(width: 2),
+                              AddButtonWidget(
+                                  installmentCount: int.tryParse(
+                                          _installmentController.text) ??
+                                      0,
+                                  installmentProvider:
+                                      widget.installmentProvider),
                             ],
                           ),
                         ],

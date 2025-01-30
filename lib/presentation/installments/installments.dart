@@ -85,6 +85,7 @@ class _InstallmentsScreenState extends State<InstallmentsScreen> {
               padding: const EdgeInsets.only(bottom: 80),
               itemBuilder: (ctx, i) => InstallmentCard(
                 installment: installments[i],
+                installmentProvider: installmentProvider,
               ),
             );
           },

@@ -4,14 +4,15 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:tanta_club/presentation/installments/installment.dart';
 import 'package:tanta_club/presentation/installments/installment_modal_sheet.dart';
 import 'package:tanta_club/style/colors.dart';
+import 'package:tanta_club/providers/installment_provider.dart';
 
 class InstallmentCard extends StatelessWidget {
   final Installment installment;
+  final InstallmentProvider installmentProvider;
 
-  const InstallmentCard({
-    Key? key,
-    required this.installment,
-  }) : super(key: key);
+  const InstallmentCard(
+      {Key? key, required this.installment, required this.installmentProvider})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -53,11 +54,13 @@ class InstallmentCard extends StatelessWidget {
               AppLocalizations.of(context)!.total,
               installment.total.toString(),
             ),
-            const Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                SizedBox(width: 10),
-                InstallmentModalSheet(),
+                const SizedBox(width: 10),
+                InstallmentModalSheet(
+                  installmentProvider: installmentProvider,
+                ),
               ],
             )
           ],

@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:tanta_club/providers/installment_provider.dart';
 
 class AddButtonWidget extends StatelessWidget {
-  const AddButtonWidget({
-    super.key,
-    required this.installmentCount,
-  });
+  const AddButtonWidget(
+      {super.key,
+      required this.installmentCount,
+      required this.installmentProvider});
 
   final int installmentCount;
+  final InstallmentProvider installmentProvider;
 
   @override
   Widget build(BuildContext context) {
@@ -24,6 +26,7 @@ class AddButtonWidget extends StatelessWidget {
             style: const TextStyle(fontFamily: "Almarai"),
           ),
           onPressed: () {
+            installmentProvider.test_log();
             print("Add Btn Clicked  $installmentCount");
 
             Navigator.pop;
